@@ -1,42 +1,7 @@
 <?php
 
-@include('../database.php');
 
- if(isset($_POST['add_content'])){
-
-   $dated =  mysqli_real_escape_string($db,$_POST['dated']);
-   $notification_title =  mysqli_real_escape_string($db,$_POST['notification_title']);
-   $notification_pdf=$_FILES['file']['name'];
-   $notification_pdf_temp_name=$_FILES['file']['tmp_name'];
-if(move_uploaded_file($notification_pdf_temp_name,"uploads/".$notification_pdf))
-{
-   header('location:expp_cms.php');
-}
-else{
-   echo("try again");
-}
-
-  
-  
-   
-   
-   
- 
-
-  if(empty($dated)||empty($notification_title)||empty( $notification_pdf)){
-       $message[] = 'please fill out all';
-   }else{
-      $insert = "INSERT INTO `expp` (`dated`,`notification_title`,`pdf_file`) VALUES ('$dated','$notification_title','$notification_pdf')";
-       $upload = mysqli_query($db,$insert);
-      if($upload){
-         // move_uploaded_file($product_image_tmp_name, $product_image_folder);
-         $message[] = 'new content added successfully';
-      }else{
-         $message[] = 'could not add the content';
-       }
-    }
-
-};
+include './upload.php';
 
  if(isset($_GET['delete'])){
    $id = $_GET['delete'];
@@ -82,7 +47,7 @@ if(isset($message))
 
    <div class="admin-product-form-container">
 
-      <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+      <form action="./upload.php" method="post" enctype="multipart/form-data">
          <h3>Expression Of Interest</h3>
          
          <input type="text" placeholder="YYYY-MM-DD" name="dated" class="box"></input>

@@ -1,9 +1,10 @@
 <?php
-require('./database.php');
-session_start();
+
+include './php admin crud/upload.php';
+
+
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,9 +43,9 @@ session_start();
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner"></div>
-    </div>
+    </div> -->
     <!-- Spinner End -->
 
 
@@ -73,58 +74,57 @@ session_start();
     <!-- Navbar Start -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg px-5 py-3 py-lg-0" id="nav" style="background-color:white">
-            <a href="index.html" class="navbar-brand p-0">
+            <a href="index.php" class="navbar-brand p-0">
                 <h1 class="m-0"><i class="fa fa-user-tie me-2"></i></h1>
             </a>
             
+            
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="index.php" class="nav-item nav-link active">Home</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Organization</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="aboutus.php" class="dropdown-item">About Us</a>
-                                <a href="mission.php" class="dropdown-item">Mission</a>
-                                <a href="objectives.php" class="dropdown-item">Objectives</a>
-                                <a href="activities.php" class="dropdown-item">Activities</a>
-                                <a href="directors.php" class="dropdown-item">Board of Directors</a>
-                                <a href="committee.php" class="dropdown-item">Committee JKHMPC</a>
-                                <a href="telephone.php" class="dropdown-item">Telephone Directory</a>
-                                
-    
-                            </div>
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.php" class="nav-item nav-link active">Home</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Organization</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="aboutus.php" class="dropdown-item">About Us</a>
+                            <a href="./mission.php" class="dropdown-item">Mission</a>
+                            <a href="./objectives.php" class="dropdown-item">Objectives</a>
+                            <a href="./activities.php" class="dropdown-item">Activities</a>
+                            <a href="directors.php" class="dropdown-item">Board of Directors</a>
+                            <a href="./committee.php" class="dropdown-item">Committee JKHMPC</a>
+                            <a href="./contact.php" class="dropdown-item">Telephone Directory</a>
+                            
+
                         </div>
-    
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Notifications</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="tenders.html" class="dropdown-item">Tenders</a>
-                                <a href="expp.html" class="dropdown-item">Expression of Interest</a>
-                                <a href="public.html" class="dropdown-item">Public Interest</a>
-                                
-                            </div>
-                        </div>
-    
-                        <a href="products.html" class="nav-item nav-link">Products</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Gallery</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="photos.html" class="dropdown-item">Photos</a>
-                                <a href="videos.html" class="dropdown-item">Videos</a>
-                               
-                            </div>
-                        </div>
-                        <a href="work.php" class="nav-item nav-link">Work Plan</a>
-    
-                        <a href="right.php" class="nav-item nav-link">Right To Information</a>
-    
-                        <a href="contact.php" class="nav-item nav-link">Contact</a>
-    
                     </div>
-    
-                   
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Notifications</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="tenders.php" class="dropdown-item">Tenders</a>
+                            <a href="expp.php" class="dropdown-item">Expression of Interest</a>
+                            <a href="public.php" class="dropdown-item">Public Interest</a>
+                            
+                        </div>
+                    </div>
+
+                    <a href="products.php" class="nav-item nav-link">Products</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Gallery</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="photos.php" class="dropdown-item">Photos</a>
+                            <a href="videos.php" class="dropdown-item">Videos</a>
+                           
+                        </div>
+                    </div>
+                    <a href="work.php" class="nav-item nav-link">Work Plan</a>
+
+                    <a href="right.php" class="nav-item nav-link">Right To Information</a>
+
+                    <a href="contact.php" class="nav-item nav-link">Contact</a>
+
                 </div>
+
+               
             </div>
         </nav>
         <div class="container-fluid  py-5 bg-header" style="margin-bottom: 90px;">
@@ -152,53 +152,42 @@ session_start();
 </div>
     <table class="ui table">
         <thead class="">
-            <th class="one wide">S.No</th>
-            <th class="three wide">Dated</th>
+        <th class="">Dated</th>
             <th class="">Notification Title</th>
             <th class="three wide">Action</th>
         </thead>
 
- <!-- dynamic code -->
-        <?php
-      $sql='SELECT * FROM expp';
-      $runCq=mysqli_query($db,$sql);
-        ?>
 
+        <?php
+            $sql='SELECT * FROM expp';
+            $runQuery=mysqli_query($db,$sql);
+            ?>
         <tbody class="">
-        <?php
-             while($post=mysqli_fetch_assoc($runCq))
-             {
-                ?>
-             
-            <tr class="">
+<!-- //dynamic code -->
+<?php
+  while($post=mysqli_fetch_assoc($runQuery))
+  {
 
-             <!-- dynamic code -->
-            
-             
-                <td class=""><?=$post['sno']?></td>
+    ?>
+ 
+
+           
+            <tr class="">
+               
                 <td class=""><?=$post['dated']?></td>
                 <td class=""><?=$post['notification_title']?></td>
-               
-              
-                
                     <td class="">
-                    <form action="./php admin crud/download.php">   
-                    
-                    <button  style="color: white;"type="submit" onclick="<?php 
-
-                        
-                        $_SESSION['sum']= $post['pdf_file'];
-                        
-                        ?>"  class="ui button" name="<?php
-                        echo $post['sno']?>">
-                       Download/View</button>
-                    </form>
+                        <button class="ui button">
+                        <a rel="" target="" 
+                        href="./php admin crud/download.php?file_id=<?php echo $post['sno']?>" 
+                        style="color: white;">Download/View</a></button>
                     </td>
                     <?php
-             }
-             ?>
-                
-                 
+  }
+  ?>
+
+                </tr>
+              
          </tbody>
         </table>
     
@@ -245,13 +234,13 @@ session_start();
                                 <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " 
                                     style="color:brown">
                                 </i>Home</a>
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " style="color:brown">
+                                <a class="text-light mb-2" href="aboutus.html"><i class="bi bi-arrow-right " style="color:brown">
                                 </i>About</a>
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right "style="color:brown">
+                                <a class="text-light mb-2" href="mission.html"><i class="bi bi-arrow-right "style="color:brown">
                                 </i>Mission</a>
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right "style="color:brown">
+                                <a class="text-light mb-2" href="objectives.html"><i class="bi bi-arrow-right "style="color:brown">
                                 </i>Objectives</a>
-                                <a class="text-light" href="#"><i class="bi bi-arrow-right "style="color:brown">
+                                <a class="text-light" href="activities.html"><i class="bi bi-arrow-right "style="color:brown">
                                 </i>Activities</a>
                             </div>
                         </div>
@@ -261,14 +250,13 @@ session_start();
                                 <h3 class="text-light mb-0">Notifications</h3>
                             </div>
                             <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " style="color:brown">
+                                <a class="text-light mb-2" href="tenders.html"><i class="bi bi-arrow-right " style="color:brown">
                                 </i>Tenders</a>
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " style="color:brown">
+                                <a class="text-light mb-2" href="public.html"><i class="bi bi-arrow-right " style="color:brown">
                                 </i>Public Notices</a>
                                
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " style="color:brown">
+                                <a class="text-light mb-2" href="expp.html"><i class="bi bi-arrow-right " style="color:brown">
                                 </i>Expression of Interest</a>
-                               
                             </div>
                         </div>
                         

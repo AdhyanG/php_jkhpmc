@@ -1,47 +1,84 @@
 <?php
-require('../database.php');
 
+$db = mysqli_connect('localhost', 'root', '', 'jkhpmc');
+ 
 
 
 // File upload path
 
-$targetDir = "uploads/";
-$fileName = basename($_FILES["file"]["name"]);
-$targetFilePath = $targetDir . $fileName;
-$fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+$query='SELECT * FROM expp';
+$result=mysqli_query($db,$query);
+$files=mysqli_fetch_all($result,MYSQLI_ASSOC);
 
-if(!empty($_FILES["file"]["name"])){
-    // Allow certain file formats
-    $allowTypes = array('pdf');
-    if(in_array($fileType, $allowTypes)){
-        // Upload file to server
-        if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
-            // Insert image file name into database
-            $insert = $db->query("INSERT into file_storage (pdf_file) VALUES ('".$fileName."')");
-            if($insert){
-              header('Location:expp_cms.php');
-                $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
-            }else{
-                $statusMsg = "File upload failed, please try again.";
-            } 
-        }else{
-            $statusMsg = "Sorry, there was an error uploading your file.";
-        }
-    }else{
-        $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
-    }
+ if(isset($_POST['add_content'])){
+
+   $dated =  mysqli_real_escape_string($db,$_POST['dated']);
+   $notification_title =  mysqli_real_escape_string($db,$_POST['notification_title']);
+   $notification_pdf=$_FILES['file']['name'];
+   $notification_pdf_temp_name=$_FILES['file']['tmp_name'];
+   $destination="uploads/".$notification_pdf;
+   $extension=pathinfo($notification_pdf,PATHINFO_EXTENSION);
+if(move_uploaded_file($notification_pdf_temp_name,$destination))
+{
+   if(empty($dated)||empty($notification_title)||empty( $notification_pdf)){
+      $message[] = 'please fill out all';
+  }else{
+     $insert = "INSERT INTO `expp` (`dated`,`notification_title`,`pdf_file`) VALUES ('$dated','$notification_title','$notification_pdf')";
+      $upload = mysqli_query($db,$insert);
+     if($upload){
+        move_uploaded_file($product_image_tmp_name, $product_image_folder);
+        $message[] = 'new content added successfully';
+     }else{
+        $message[] = 'could not add the content';
+      }
+   }
+   header('location:expp_cms.php');
 }
-
-
 else{
-    $statusMsg = 'Please select a file to upload.';
-    
+   echo("try again");
+}
 
+  
+  
+   
+   
+   
+ 
+
+  
+
+};
+
+
+// Downloads files
+if (isset($_GET['file_id'])) {
+    $id = $_GET['file_id'];
+ 
+    // fetch file to download from database
+    $sql = "SELECT * FROM expp WHERE sno=$id";
+    $result = mysqli_query($db, $sql);
+ 
+    $file = mysqli_fetch_assoc($result);
+    $filepath = 'uploads/' . $file['pdf_file'];
+ 
+    if (file_exists($filepath)) {
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename=' . basename($filepath));
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize('uploads/' . $file['pdf_file']));
+        readfile('uploads/' . $file['pdf_file']);
+ 
+        // Now update downloads count
+
+        exit;
+    }
+ 
 }
 
 
-// Display status message
-echo $statusMsg;
 ?>
 
 

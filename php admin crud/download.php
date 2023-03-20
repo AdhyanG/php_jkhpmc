@@ -1,40 +1,33 @@
 <?php
+$db=mysqli_connect('localhost','root','','jkhpmc');
+if (isset($_GET['file_id'])) {
+  $id = $_GET['file_id'];
 
-@include('../database.php');
-session_start();
+  // fetch file to download from database
+  $sql = "SELECT * FROM expp WHERE sno=$id";
+  $result = mysqli_query($db, $sql);
 
+  $file = mysqli_fetch_assoc($result);
+  $filepath = 'uploads/' . $file['pdf_file'];
 
+  if (file_exists($filepath)) {
+      header('Content-Description: File Transfer');
+      header('Content-Type: application/octet-stream');
+      header('Content-Disposition: attachment; filename=' . basename($filepath));
+      header('Expires: 0');
+      header('Cache-Control: must-revalidate');
+      header('Pragma: public');
+      header('Content-Length: ' . filesize('uploads/' . $file['pdf_file']));
+      readfile('uploads/' . $file['pdf_file']);
 
+      // Now update downloads count
 
-// Define file name and path 
-$fileName = $_SESSION['sum']; 
+      exit;
+  }
 
-// $sql="SELECT pdf_file FROM expp WHERE sno='$sno'";
-// $runCq=mysqli_query($db,$sql);
-//  $result=mysqli_fetch_assoc($runCq);
-//  $fileName=$result['pdf_file'];
-$filePath = 'uploads/'.$fileName; 
- 
-if(!empty($fileName) && file_exists($filePath)){ 
-    // Define headers 
-    header("Cache-Control: public"); 
-    header("Content-Description: File Transfer"); 
-    header("Content-Disposition: attachment; filename=$fileName"); 
-    header("Content-Type: application/zip"); 
-    header("Content-Transfer-Encoding: binary"); 
-
-    // Read the file 
-    readfile($filePath); 
-  session_unset();  
-   session_destroy();
-    exit; 
-   //
-      
-}else{ 
-    echo 'The file does not exist.'; 
 }
 
 
- ?>
+?>
 
  
