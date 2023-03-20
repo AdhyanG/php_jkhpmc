@@ -1,5 +1,8 @@
 <?php
-require('database.php');
+
+include './php admin crud/tenders_upload.php';
+
+
 
 ?>
 
@@ -9,10 +12,6 @@ require('database.php');
 <head>
     <meta charset="utf-8">
     <title>J&K HOTICULTURAL PRODUCE MARKETING & PROCESSING CORPORATION LTD.</title>
-    <link rel="stylesheet" href="//cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
-    
-    
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -36,12 +35,11 @@ require('database.php');
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <script src=" https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js">
-       
-    </script>
+
+    <link href="css/committee.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">  
 </head>
 
 <body>
@@ -133,51 +131,169 @@ require('database.php');
         <div class="container-fluid  py-5 bg-header" style="margin-bottom: 90px;">
             <div class="row py-5">
                 <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-4 text-white animated zoomIn">Tenders</h1>
+                    <h1 class="display-4 text-white animated zoomIn">Expression of Interest</h1>
                     <a href="" class="h5 text-white">Notifications</a>
                     <i class="far fa-circle text-white px-2"></i>
-                    <a href="" class="h5 text-white">Tenders</a>
+                    <a href="" class="h5 text-white">Expression of Interest</a>
                 </div>
             </div>
 
         </div>
         
     </div>
+    <!-- Navbar End -->
 
-    <table class="table" id="myTable">
-  <thead>
-    <tr>
-      <th scope="col">Sno</th>
-      <th scope="col">Dated</th>
-      <th scope="col">Notification Title</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody> 
 
-  <?php
-  $tenderQuery="SELECT * FROM tenders";
-  $runCq=mysqli_query($db, $tenderQuery);
-  while($post=mysqli_fetch_assoc($runCq))
-  {
-   ?> 
+    
 
-    <tr>
-      <th scope="row"><?=$post['sno']?></th>
-      <td><?=$post['dated']?></td>
-      <td><?=$post['notification_title']?></td>
-      <td><input type="file" id="myfile" name="myfile"></td>
-    </tr>
+    <!-- Expp Start -->
+    <div class="t1head">
+         
+        <h3>Tenders</h3>
+</div>
+    <table class="ui table" id="myTable">
+        <thead class="">
+        <th class="">Dated</th>
+            <th class="">Tenders</th>
+            <th class="three wide">Action</th>
+        </thead>
+
+
+        <?php
+            $sql='SELECT * FROM tenders';
+            $runQuery=mysqli_query($db,$sql);
+            ?>
+        <tbody class="">
+<!-- //dynamic code -->
 <?php
+  while($post=mysqli_fetch_assoc($runQuery))
+  {
+
+    ?>
+ 
+
+           
+            <tr class="">
+               
+                <td class=""><?=$post['dated']?></td>
+                <td class=""><?=$post['notification_title']?></td>
+                    <td class="">
+                        <button class="ui button">
+                        <a rel="" target="" 
+                        href="./php admin crud/tenders_download.php?file_id=<?php echo $post['sno']?>" 
+                        style="color: white;">Download/View</a></button>
+                    </td>
+                    <?php
   }
-
   ?>
-  </tbody>
-</table>
+
+                </tr>
+              
+         </tbody>
+        </table>
+    
+    <!-- Expp End -->
 
 
+   
 
 
+    
+
+     <!-- Footer Start -->
+     <div class="container-fluid " id="footer" data-wow-delay="0.1s" >
+        <div class="container" style="background-color:#34AD54;">
+            <div class="row gx-5" >
+                <div class="col-lg-8 col-md-6" style="color:white; ">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Get In Touch</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt  me-2" style="color:brown"></i>
+                                <p class="mb-0">Head Office, Rajbagh Srinagar</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open me-2" style="color:brown"></i>
+                                <p class="mb-0">
+                                    jkhpmcltd@gmail.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone me-2" style="color:brown"></i>
+                                
+                                <p class="mb-0">
+                                    0194- 2311312 </p>
+                            </div>
+                           
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Navigations</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " 
+                                    style="color:brown">
+                                </i>Home</a>
+                                <a class="text-light mb-2" href="aboutus.html"><i class="bi bi-arrow-right " style="color:brown">
+                                </i>About</a>
+                                <a class="text-light mb-2" href="mission.html"><i class="bi bi-arrow-right "style="color:brown">
+                                </i>Mission</a>
+                                <a class="text-light mb-2" href="objectives.html"><i class="bi bi-arrow-right "style="color:brown">
+                                </i>Objectives</a>
+                                <a class="text-light" href="activities.html"><i class="bi bi-arrow-right "style="color:brown">
+                                </i>Activities</a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Notifications</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="tenders.html"><i class="bi bi-arrow-right " style="color:brown">
+                                </i>Tenders</a>
+                                <a class="text-light mb-2" href="public.html"><i class="bi bi-arrow-right " style="color:brown">
+                                </i>Public Notices</a>
+                               
+                                <a class="text-light mb-2" href="expp.html"><i class="bi bi-arrow-right " style="color:brown">
+                                </i>Expression of Interest</a>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+                    <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="text-light mb-0">Important Links</h3>
+                        </div>
+                        <div class="link-animated d-flex flex-column justify-content-start">
+                            
+                            <a class="text-light mb-2" href="https://jkgad.nic.in/"><i class="bi bi-arrow-right " 
+                                style="color:brown">
+                            </i>General Administartion Department</a>
+                            <a class="text-light mb-2" href="http://www.hortijmu.jk.gov.in/"><i class="bi bi-arrow-right " style="color:brown">
+                            </i>Directorate of Horticulture Jammu</a>
+                            <a class="text-light mb-2" href="https://hortikashmir.gov.in/"><i class="bi bi-arrow-right "style="color:brown">
+                            </i>Directorate of Horticulture Kashmir</a>
+                            <a class="text-light mb-2" href="http://jkdhpm.in/index.aspx"><i class="bi bi-arrow-right "style="color:brown">
+                            </i>Directorate of Horticulture(P&M) J&K</a>
+                            <a class="text-light" href="https://nhb.gov.in/default.aspx"><i class="bi bi-arrow-right "style="color:brown">
+                            </i>National Horticulture Board</a>
+                        </div>
+                    </div>
+                    
+                    
+                       
+                    
+
+            
+                
+            </div>
+        </div>
+    </div>
     <div class="container-fluid text-white" style="background-color:rgba(11,12,11,.8627450980392157);">
         <div class="container text-center">
             <div class="row justify-content-end">
@@ -195,34 +311,23 @@ require('database.php');
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <!-- dataTable function -->
-<script src="//cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
-    
-
-<script>
-        $(document).ready(function () {
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script>
+$(document).ready(function () {
     $('#myTable').DataTable();
 });
     </script>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg  btn-lg-square rounded back-to-top" style="color:red; background-color: yellowgreen;" ><i class="bi bi-arrow-up"></i></a>
+
+
 
     <!-- JavaScript Libraries -->
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>

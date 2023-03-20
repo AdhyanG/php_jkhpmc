@@ -39,6 +39,8 @@ include './php admin crud/upload.php';
     <link href="css/style.css" rel="stylesheet">
 
     <link href="css/committee.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">  
 </head>
 
 <body>
@@ -150,7 +152,7 @@ include './php admin crud/upload.php';
          
         <h3>Expression of Interest</h3>
 </div>
-    <table class="ui table">
+    <table class="ui table" id="myTable">
         <thead class="">
         <th class="">Dated</th>
             <th class="">Notification Title</th>
@@ -308,6 +310,15 @@ include './php admin crud/upload.php';
             </div>
         </div>
     </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script>
+$(document).ready(function () {
+    $('#myTable').DataTable();
+});
+    </script>
     <!-- Footer End -->
 
 
@@ -317,7 +328,7 @@ include './php admin crud/upload.php';
 
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
