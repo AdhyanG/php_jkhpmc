@@ -23,9 +23,10 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -38,16 +39,35 @@
 
 <body>
 
+<!-- logout code -->
+
+<div class="navigation">
+  
+	<a class="button" href="logout.php">
+  	<img id="img1" src="">
+  
+  <div class="logout">LOGOUT</div>
+
+	</a>
+  
+</div>
+
+
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
   <!-- ======= Header ======= -->
+ 
+
   <header id="header">
     <div class="d-flex flex-column">
 
       <div class="profile">
         <img src="assets/img/emblem.png" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Admin</a></h1>
+        <h1 class="text-light"><a href="admin.php">Admin</a></h1>
+  
+        <!-- <h1 class="text-light" style="float:right;"><a href="logout.php">Logout</a></h1> -->
+
         <div class="social-links mt-3 text-center">
           <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
           <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>

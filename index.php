@@ -1,3 +1,14 @@
+<?php
+require('./database.php');
+// mysqli_select_db($db,"jkhpmc");
+$query='SELECT * FROM slider';
+$runQuery=mysqli_query($db,$query);
+$rowcount=mysqli_num_rows($runQuery);
+
+//
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +39,8 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <!-- External Stylesheet -->
+    <link href="css/index.css" rel="stylesheet">
 
      <!-- Customized Bootstrap Stylesheet -->
      <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -66,7 +79,7 @@
     <!-- Navbar & Carousel Start -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg px-5 py-3 py-lg-0" id="nav" style="background-color:white">
-            <a href="index.html" class="navbar-brand p-0">
+            <a href="index.php" class="navbar-brand p-0">
                 <h1 class="m-0"><i class="fa fa-user-tie me-2"></i></h1>
             </a>
             
@@ -81,7 +94,7 @@
                             <a href="mission.php" class="dropdown-item">Mission</a>
                             <a href="objectives.php" class="dropdown-item">Objectives</a>
                             <a href="activities.php" class="dropdown-item">Activities</a>
-                            <a href="directors.html" class="dropdown-item">Board of Directors</a>
+                            <a href="directors.php" class="dropdown-item">Board of Directors</a>
                             <a href="committee.php" class="dropdown-item">Committee JKHMPC</a>
                             <a href="telephone.php" class="dropdown-item">Telephone Directory</a>
                             
@@ -95,8 +108,7 @@
                             <a href="tenders.php" class="dropdown-item">Tenders</a>
                             <a href="expp.php" class="dropdown-item">Expression of Interest</a>
                             <a href="public.php" class="dropdown-item">Public Interest</a>
-                            <a href="testimonial.php" class="dropdown-item">Testimonial</a>
-                            <a href="quote.php" class="dropdown-item">Free Quote</a>
+                            
                         </div>
                     </div>
 
@@ -122,21 +134,49 @@
         </nav>
 
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+     
+   
+     
+
+         
             <div class="carousel-inner">
+            <?php
+     for($i=0;$i<$rowcount;$i++)
+     {
+          $row=mysqli_fetch_array($runQuery);
+
+        ?>
+<?php
+
+if($i==1)
+{
+    ?>
+
+
+
+
+
                 <div class="carousel-item active">
-                    <img class="w-100 " style="height:600px;"src="img/newimg.jpg" alt="Image">
+                    <img class="w-100 " style="height:400px;"src="./php admin crud/images/<?=$row['image'];?>" alt="Image">
+                </div>
+<?php
+}
+else
+{
+?>
+  <div class="carousel-item ">
+                    <img class="w-100 " style="height:400px;"src="./php admin crud/images/<?=$row['image'];?>" alt="Image">
+                </div>
+<?php
+}
+?>
                    
-                </div>
-                <div class="carousel-item"3>
-                    <img class="w-100" style="height:600px;" src="img/B3.jpg" alt="Image">
-                    
-                    
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" style="height:600px;" src="img/B4.jpg" alt="Image">
-                    
-                    
-                </div>
+  
+                
+                <?php
+     }
+     ?>
+           
                 
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
@@ -152,6 +192,91 @@
         </div>
     </div>
     <!-- Navbar & Carousel End -->
+    <!-- Facts Start -->
+    <div class="container-fluid facts py-5 pt-lg-0">
+        <div class="container py-5 pt-lg-0">
+            <div class="row gx-0">
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="bg-secondary shadow d-flex align-items-center justify-content-center p-4" 
+                    style="height: 180px;">
+                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" 
+                        style="width: 60px; height: 60px;">
+                        <i class="fas fa-star text-secondary"></i>
+
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-white mb-0">Fruits</h5>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">6</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="bg-light shadow d-flex align-items-center justify-content-center p-4" 
+                    style="height: 180px;">
+                        <div class="bg-secondary d-flex align-items-center justify-content-center rounded mb-2"
+                         style="width: 60px; height: 60px;">
+                            <i class="fa fa-check text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-secondary mb-0">DryFruits</h5>
+                            <h1 class="text-secondary mb-0" data-toggle="counter-up">3</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="bg-secondary shadow d-flex align-items-center justify-content-center p-4"
+                     style="height: 180px;">
+                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                            <i class="fas fa-star text-secondary"></i>
+
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-white mb-0">Seeds</h5>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">2</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
+
+ <!--Image-->
+ <div class="image-row" style="padding:
+ 14px;">
+    <div class="image-container">
+      <img src="IMG/team-1.jpg" alt="Image 1" style="height:250px;">
+      <div class="image-text">
+        <h5>Sh. Manoj Sinha</h5>
+        <p>Honourable Lieutenant Governor, Union Territory of Jammu and Kashmir</p>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="img/team-2.jpg" alt="Image 2" style="height:250px;">
+      <div class="image-text">
+        <h5>Sh. Rajeev Rai Bhatnagar</h5>
+        <p>Advisor to Hon'ble LG, Govt. of UT of J&K</p>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="img/team-3.jpg" alt="Image 3" style="height:250px;">
+      <div class="image-text">
+        <h5>Sh. Atal Dulloo (IAS)</h5>
+        <p>Financial Commissioner, Agriculture Production Department</p>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="img/t.png" alt="Image 4" style="height:250px;">
+      <div class="image-text">
+        <h5>Imam Din</h5>
+        <p>Managing Directorr</p>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!--Image-->
+  
 
 
    
@@ -160,6 +285,7 @@
     
    
     <!-- Team Start -->
+    <!---
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
            
@@ -189,6 +315,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="row g-5">
+                    <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                        <div class="team-item bg-light rounded overflow-hidden">
+                            <div class="team-img position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src="" alt="">
+                                
+                            </div>
+                            <div class="text-center py-4">
+                                <h4 class="text-primary">Imam Din</h4>
+                                <p class="text-uppercase m-0">Managing Director</p>
+                            </div>
+                        </div>
+                    </div>
                 
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
                     <div class="team-item bg-light rounded overflow-hidden">
@@ -203,9 +342,10 @@
                     </div>
                     
                 </div>
+                
             </div>
         </div>
-    </div>
+    </div>-->
     <!--Team End-->
 
 
@@ -240,7 +380,7 @@
                             <h4 class="text-primary mb-0">+012 345 6789</h4>
                         </div>
                     </div>
-                    <a href="quote.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Request A Quote</a>
+                    <a href="quote.php" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Request A Quote</a>
                 </div>
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
@@ -770,13 +910,13 @@
                                 <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " 
                                     style="color:brown">
                                 </i>Home</a>
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " style="color:brown">
+                                <a class="text-light mb-2" href="aboutus.php"><i class="bi bi-arrow-right " style="color:brown">
                                 </i>About</a>
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right "style="color:brown">
+                                <a class="text-light mb-2" href="mission.php"><i class="bi bi-arrow-right "style="color:brown">
                                 </i>Mission</a>
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right "style="color:brown">
+                                <a class="text-light mb-2" href="objectives.php"><i class="bi bi-arrow-right "style="color:brown">
                                 </i>Objectives</a>
-                                <a class="text-light" href="#"><i class="bi bi-arrow-right "style="color:brown">
+                                <a class="text-light" href="activities.php"><i class="bi bi-arrow-right "style="color:brown">
                                 </i>Activities</a>
                             </div>
                         </div>
@@ -786,14 +926,13 @@
                                 <h3 class="text-light mb-0">Notifications</h3>
                             </div>
                             <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " style="color:brown">
+                                <a class="text-light mb-2" href="tenders.php"><i class="bi bi-arrow-right " style="color:brown">
                                 </i>Tenders</a>
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " style="color:brown">
+                                <a class="text-light mb-2" href="public.php"><i class="bi bi-arrow-right " style="color:brown">
                                 </i>Public Notices</a>
                                
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " style="color:brown">
+                                <a class="text-light mb-2" href="expp.php"><i class="bi bi-arrow-right " style="color:brown">
                                 </i>Expression of Interest</a>
-                               
                             </div>
                         </div>
                         

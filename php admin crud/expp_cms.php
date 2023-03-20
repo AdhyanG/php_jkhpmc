@@ -84,6 +84,7 @@ if(isset($message))
 
       <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
          <h3>Expression Of Interest</h3>
+         
          <input type="text" placeholder="YYYY-MM-DD" name="dated" class="box"></input>
          <input type="text" placeholder="enter title" name="notification_title" class="box"></input>
          <input type="file" id="file" name="file" class="box">
@@ -137,6 +138,8 @@ $select=mysqli_query($db,$sql);
                 <?php
 
             }
+            exit();
+            
             
          ?>
              

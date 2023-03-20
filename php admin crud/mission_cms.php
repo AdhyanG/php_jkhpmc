@@ -101,11 +101,11 @@ $select=mysqli_query($db,$sql);
             {
            ?>
             <tr>
-            <td><?=$post['mission_content']?></td>
+            <td><p style="overflow:hidden;-webkit-line-clamp:1;display:-webkit-box;-webkit-box-orient:vertical;" ><?=$post['mission_content']?></p></td>
             <td></td>
         
             <td>
-               <a href="admin_update.php?edit=<?php echo $post['id'];?>" class="btn"><i class="fas fa-edit"></i>edit</a>
+               <a href="mission_update.php?edit=<?php echo $post['id'];?>" class="btn"><i class="fas fa-edit"></i>edit</a>
                <a href="mission_cms.php?delete=<?php echo $post['id'];?>" class="btn"><i class="fas fa-trash"></i>delete</a>
 
             </td>

@@ -1,3 +1,7 @@
+<?php
+require('./database.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +33,6 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    
 
     <!--slides css-->
     <link href="css/photos.css" rel="stylesheet">
@@ -37,9 +40,9 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner"></div>
-    </div>
+    </div> -->
     <!-- Spinner End -->
 
 
@@ -156,11 +159,20 @@
      
  <!-- Slider Start --> 
  <div class="slider-container">
-    
     <div class="slider">
-       
-       <img src="./img/productimg/almonds.jpg" alt="Product 1">
-        <img src="img/productimg/appricots.jpg" alt="Product2">
+    <?php
+    $sql='SELECT * FROM products';
+    $runCq=mysqli_query($db,$sql);
+    while($post=mysqli_fetch_assoc($runCq))
+    {
+        ?>
+    
+       <img src="./php admin crud/uploaded_img/<?php echo $post['product_image']; ?>"  height="500" alt="Product 1">
+       <?php
+    }
+    ?>
+    
+        <!-- <img src="img/productimg/appricots.jpg" alt="Product2">
         <img src="img/productimg/apple.jpg" alt="Product 3">
         <img src="img/productimg/gucci.jpg" alt="Product 4">
         <img src="img/productimg/honey.png" alt="Product 5">
@@ -169,7 +181,7 @@
         <img src="img/productimg/zeera.jpg" alt="Product 8">
         <img src="img/productimg/rice.jpg" alt="Product 9">
         <img src="img/productimg/saffron.png" alt="Product10">
-        <img src="img/productimg/walnut.jpg" alt="Product11">
+        <img src="img/productimg/walnut.jpg" alt="Product11"> -->
     
 </div>
     <div class="slider-dots"></div>

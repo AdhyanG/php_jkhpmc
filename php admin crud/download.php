@@ -1,21 +1,40 @@
 <?php
 
 @include('../database.php');
+session_start();
 
- if(isset($_POST['submit'])){
 
-   
-  
-   $notification_pdf=$_FILES['file']['name'];
-   $notification_pdf_temp_name=$_FILES['file']['tmp_name'];
-if(move_uploaded_file($notification_pdf_temp_name,"uploads/".$notification_pdf))
-{
-   header('location:expp_cms.php');
+
+
+// Define file name and path 
+$fileName = $_SESSION['sum']; 
+
+// $sql="SELECT pdf_file FROM expp WHERE sno='$sno'";
+// $runCq=mysqli_query($db,$sql);
+//  $result=mysqli_fetch_assoc($runCq);
+//  $fileName=$result['pdf_file'];
+$filePath = 'uploads/'.$fileName; 
+ 
+if(!empty($fileName) && file_exists($filePath)){ 
+    // Define headers 
+    header("Cache-Control: public"); 
+    header("Content-Description: File Transfer"); 
+    header("Content-Disposition: attachment; filename=$fileName"); 
+    header("Content-Type: application/zip"); 
+    header("Content-Transfer-Encoding: binary"); 
+
+    // Read the file 
+    readfile($filePath); 
+  session_unset();  
+   session_destroy();
+    exit; 
+   //
+      
+}else{ 
+    echo 'The file does not exist.'; 
 }
-else{
-   echo("try again");
-}
- }
+
+
  ?>
 
- echo(<a href="./uploads/<?php echo $notification_pdf;?>">Click here to download</a>)
+ 

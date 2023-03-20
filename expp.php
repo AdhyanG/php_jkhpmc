@@ -1,5 +1,6 @@
 <?php
 require('./database.php');
+session_start();
 
 ?>
 
@@ -177,20 +178,27 @@ require('./database.php');
                 <td class=""><?=$post['sno']?></td>
                 <td class=""><?=$post['dated']?></td>
                 <td class=""><?=$post['notification_title']?></td>
+               
+              
+                
                     <td class="">
                     <form action="./php admin crud/download.php">   
                     
-                    <button type="submit" class="ui button">
-                        <a 
-                        href="#"
-                        style="color: white;">Download/View</a></button>
+                    <button  style="color: white;"type="submit" onclick="<?php 
+
+                        
+                        $_SESSION['sum']= $post['pdf_file'];
+                        
+                        ?>"  class="ui button" name="<?php
+                        echo $post['sno']?>">
+                       Download/View</button>
                     </form>
                     </td>
                     <?php
              }
              ?>
                 
-                    
+                 
          </tbody>
         </table>
     

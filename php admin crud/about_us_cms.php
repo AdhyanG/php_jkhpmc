@@ -46,10 +46,14 @@
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
+    
    
 
 </head>
 <body>
+   <!-- logout code -->
+
+
 <?php
 if(isset($message))
 {
@@ -101,7 +105,7 @@ $select=mysqli_query($db,$sql);
             {
            ?>
             <tr>
-            <td><?=$post['content']?></td>
+            <td><p style="overflow:hidden;-webkit-line-clamp:1;display:-webkit-box;-webkit-box-orient:vertical;"><?=$post['content']?></p></td>
             <td></td>
         
             <td>
@@ -127,6 +131,7 @@ $select=mysqli_query($db,$sql);
     window.history.replaceState( null, null, window.location.href );
 }
 </script>
+
 
 
 </body>
