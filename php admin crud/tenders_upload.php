@@ -25,12 +25,13 @@ if(move_uploaded_file($notification_pdf_temp_name,$destination))
   
 
    if(empty($dated)||empty($notification_title)||empty( $notification_pdf)){
+
       $message[] = 'please fill out all';
   }else{
      $insert = "INSERT INTO `tenders` (`dated`,`notification_title`,`pdf_file`) VALUES ('$dated','$notification_title','$notification_pdf')";
       $upload = mysqli_query($db,$insert);
      if($upload){
-        move_uploaded_file($product_image_tmp_name, $product_image_folder);
+        move_uploaded_file($notification_pdf_temp_name, $destination);
         $message[] = 'new content added successfully';
      }else{
         $message[] = 'could not add the content';
@@ -41,19 +42,11 @@ if(move_uploaded_file($notification_pdf_temp_name,$destination))
 else{
    echo("try again");
 }
-if(isset($message))
-{
-   foreach($message as $message){
-      echo '<span class="message">'.$message.'</span>';
-      
 
-   }
-
-}
 
   
   
-   
+header('location:tenders_cms.php');
    
    
  

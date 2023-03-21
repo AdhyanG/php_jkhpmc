@@ -92,7 +92,7 @@ $select=mysqli_query($db,$sql);
             <td><?=$post['sno']?></td>
             <td><?=$post['dated']?></td>
             <td><?=$post['notification_title']?></td>
-            <td><?=$post['pdf_file']?></td>
+            
         
             <td>
                <a href="admin_update.php?edit=<?php echo $post['sno'];?>" class="btn"><i class="fas fa-edit"></i>edit</a>
