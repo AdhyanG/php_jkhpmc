@@ -18,8 +18,12 @@ $files=mysqli_fetch_all($result,MYSQLI_ASSOC);
    $notification_pdf_temp_name=$_FILES['file']['tmp_name'];
    $destination="uploads/".$notification_pdf;
    $extension=pathinfo($notification_pdf,PATHINFO_EXTENSION);
+
+
 if(move_uploaded_file($notification_pdf_temp_name,$destination))
 {
+  
+
    if(empty($dated)||empty($notification_title)||empty( $notification_pdf)){
       $message[] = 'please fill out all';
   }else{
@@ -36,6 +40,15 @@ if(move_uploaded_file($notification_pdf_temp_name,$destination))
 }
 else{
    echo("try again");
+}
+if(isset($message))
+{
+   foreach($message as $message){
+      echo '<span class="message">'.$message.'</span>';
+      
+
+   }
+
 }
 
   

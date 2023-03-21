@@ -18,7 +18,7 @@ include './tenders_upload.php';
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>expp</title>
+   <title>Tenders cms</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -80,7 +80,7 @@ $select=mysqli_query($db,$sql);
             <th>Sno</th>
             <th>Dated</th>
             <th>Notification title</th>
-            <th>Pdf File</th>
+           
 
             <th>action</th>
          </tr>
@@ -93,7 +93,7 @@ $select=mysqli_query($db,$sql);
             <td><?=$post['sno']?></td>
             <td><?=$post['dated']?></td>
             <td><p style="overflow:hidden;-webkit-line-clamp:1;display:-webkit-box;-webkit-box-orient:vertical;"><?=$post['notification_title']?></p></td>
-            <td><?=$post['pdf_file']?></td>
+       
             
         
             <td>
@@ -116,11 +116,7 @@ $select=mysqli_query($db,$sql);
    </div>
 
 </div>
-<script>
-  if ( window.history.replaceState ) {
-    window.history.replaceState( null, null, window.location.href );
-}
-</script>
+
 
 </body>
 
