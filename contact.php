@@ -77,12 +77,12 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Organization</a>
                         <div class="dropdown-menu m-0">
                             <a href="aboutus.php" class="dropdown-item">About Us</a>
-                            <a href="./mission.php" class="dropdown-item">Mission</a>
-                            <a href="./objectives.php" class="dropdown-item">Objectives</a>
-                            <a href="./activities.php" class="dropdown-item">Activities</a>
+                            <a href="mission.php" class="dropdown-item">Mission</a>
+                            <a href="objectives.php" class="dropdown-item">Objectives</a>
+                            <a href="activities.php" class="dropdown-item">Activities</a>
                             <a href="directors.php" class="dropdown-item">Board of Directors</a>
-                            <a href="./committee.php" class="dropdown-item">Committee JKHMPC</a>
-                            <a href="./contact.php" class="dropdown-item">Telephone Directory</a>
+                            <a href="committee.php" class="dropdown-item">Committee JKHMPC</a>
+                            <a href="telephone.php" class="dropdown-item">Telephone Directory</a>
                             
 
                         </div>
@@ -118,8 +118,20 @@
                
             </div>
         </nav>
-    <!-- Navbar End -->
+        <div class="container-fluid  py-5 bg-header" style="margin-bottom: 90px;">
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-4 text-white animated zoomIn">Contact Us</h1>
+                    <!-- <a href="" class="h5 text-white">Organization</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="" class="h5 text-white">Work Plan</a> -->
+                </div>
+            </div>
 
+        </div>
+        
+    </div>
+    <!-- Navbar End -->
 
     
 
@@ -261,115 +273,116 @@
 
    <!-- Footer Start -->
    <div class="container-fluid " id="footer" data-wow-delay="0.1s" >
-    <div class="container" style="background-color:#34AD54;">
-        <div class="row gx-5" >
-            <div class="col-lg-8 col-md-6" style="color:white; ">
-                <div class="row gx-5">
-                    <div class="col-lg-4 col-md-12 pt-5 mb-5">
-                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="text-light mb-0">Get In Touch</h3>
-                        </div>
-                        <div class="d-flex mb-2">
-                            <i class="bi bi-geo-alt  me-2" style="color:brown"></i>
-                            <p class="mb-0">Head Office, Rajbagh Srinagar</p>
-                        </div>
-                        <div class="d-flex mb-2">
-                            <i class="bi bi-envelope-open me-2" style="color:brown"></i>
-                            <p class="mb-0">
-                                jkhpmcltd@gmail.com</p>
-                        </div>
-                        <div class="d-flex mb-2">
-                            <i class="bi bi-telephone me-2" style="color:brown"></i>
-                            
-                            <p class="mb-0">
-                                0194- 2311312 </p>
-                        </div>
-                       
-                    </div>
-                    <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="text-light mb-0">Navigations</h3>
-                        </div>
-                        <div class="link-animated d-flex flex-column justify-content-start">
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " 
-                                style="color:brown">
-                            </i>Home</a>
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " style="color:brown">
-                            </i>About</a>
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right "style="color:brown">
-                            </i>Mission</a>
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right "style="color:brown">
-                            </i>Objectives</a>
-                            <a class="text-light" href="#"><i class="bi bi-arrow-right "style="color:brown">
-                            </i>Activities</a>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="text-light mb-0">Notifications</h3>
-                        </div>
-                        <div class="link-animated d-flex flex-column justify-content-start">
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " style="color:brown">
-                            </i>Tenders</a>
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " style="color:brown">
-                            </i>Public Notices</a>
-                           
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " style="color:brown">
-                            </i>Expression of Interest</a>
+        <div class="container" style="background-color:#34AD54;">
+            <div class="row gx-5" >
+                <div class="col-lg-8 col-md-6" style="color:white; ">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Get In Touch</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt  me-2" style="color:brown"></i>
+                                <p class="mb-0">Head Office, Rajbagh Srinagar</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open me-2" style="color:brown"></i>
+                                <p class="mb-0">
+                                    jkhpmcltd@gmail.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone me-2" style="color:brown"></i>
+                                
+                                <p class="mb-0">
+                                    0194- 2311312 </p>
+                            </div>
                            
                         </div>
-                    </div>
-                    
-                    
-                    
-                </div>
-            </div>
-                <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                    <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                        <h3 class="text-light mb-0">Important Links</h3>
-                    </div>
-                    <div class="link-animated d-flex flex-column justify-content-start">
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Navigations</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="index.php"><i class="bi bi-arrow-right " 
+                                    style="color:brown">
+                                </i>Home</a>
+                                <a class="text-light mb-2" href="aboutus.php"><i class="bi bi-arrow-right " style="color:brown">
+                                </i>About</a>
+                                <a class="text-light mb-2" href="mission.php"><i class="bi bi-arrow-right "style="color:brown">
+                                </i>Mission</a>
+                                <a class="text-light mb-2" href="objectives.php"><i class="bi bi-arrow-right "style="color:brown">
+                                </i>Objectives</a>
+                                <a class="text-light" href="activities.php"><i class="bi bi-arrow-right "style="color:brown">
+                                </i>Activities</a>
+                            </div>
+                        </div>
                         
-                        <a class="text-light mb-2" href="https://jkgad.nic.in/"><i class="bi bi-arrow-right " 
-                            style="color:brown">
-                        </i>General Administartion Department</a>
-                        <a class="text-light mb-2" href="http://www.hortijmu.jk.gov.in/"><i class="bi bi-arrow-right " style="color:brown">
-                        </i>Directorate of Horticulture Jammu</a>
-                        <a class="text-light mb-2" href="https://hortikashmir.gov.in/"><i class="bi bi-arrow-right "style="color:brown">
-                        </i>Directorate of Horticulture Kashmir</a>
-                        <a class="text-light mb-2" href="http://jkdhpm.in/index.aspx"><i class="bi bi-arrow-right "style="color:brown">
-                        </i>Directorate of Horticulture(P&M) J&K</a>
-                        <a class="text-light" href="https://nhb.gov.in/default.aspx"><i class="bi bi-arrow-right "style="color:brown">
-                        </i>National Horticulture Board</a>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Notifications</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="tenders.php"><i class="bi bi-arrow-right " style="color:brown">
+                                </i>Tenders</a>
+                                <a class="text-light mb-2" href="public.php"><i class="bi bi-arrow-right " style="color:brown">
+                                </i>Public Notices</a>
+                               
+                                <a class="text-light mb-2" href="expp.php"><i class="bi bi-arrow-right " style="color:brown">
+                                </i>Expression of Interest</a>
+                               
+                               
+                            </div>
+                        </div>
+                        
+                        
+                        
                     </div>
                 </div>
-                
-                
-                   
-                
+                    <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="text-light mb-0">Important Links</h3>
+                        </div>
+                        <div class="link-animated d-flex flex-column justify-content-start">
+                            
+                            <a class="text-light mb-2" href="https://jkgad.nic.in/"><i class="bi bi-arrow-right " 
+                                style="color:brown">
+                            </i>General Administartion Department</a>
+                            <a class="text-light mb-2" href="http://www.hortijmu.jk.gov.in/"><i class="bi bi-arrow-right " style="color:brown">
+                            </i>Directorate of Horticulture Jammu</a>
+                            <a class="text-light mb-2" href="https://hortikashmir.gov.in/"><i class="bi bi-arrow-right "style="color:brown">
+                            </i>Directorate of Horticulture Kashmir</a>
+                            <a class="text-light mb-2" href="http://jkdhpm.in/index.aspx"><i class="bi bi-arrow-right "style="color:brown">
+                            </i>Directorate of Horticulture(P&M) J&K</a>
+                            <a class="text-light" href="https://nhb.gov.in/default.aspx"><i class="bi bi-arrow-right "style="color:brown">
+                            </i>National Horticulture Board</a>
+                        </div>
+                    </div>
+                    
+                    
+                       
+                    
 
-        
             
+                
+            </div>
         </div>
     </div>
-</div>
-<div class="container-fluid text-white" style="background-color:rgba(11,12,11,.8627450980392157);">
-    <div class="container text-center">
-        <div class="row justify-content-end">
-            <div class="col-lg-8 col-md-6">
-                <div class="d-flex align-items-center justify-content-center" style="height: 100px;">
-                     
-                        Website Designed and Developed by Jammu and Kashmir e-Governance Agency (JaKeGA), ITD
-                    
-                
-                    
+    <div class="container-fluid text-white" style="background-color:rgba(11,12,11,.8627450980392157);">
+        <div class="container text-center">
+            <div class="row justify-content-end">
+                <div class="col-lg-8 col-md-6">
+                    <div class="d-flex align-items-center justify-content-center" style="height: 100px;">
+                         
+                            Website Designed and Developed by Jammu and Kashmir e-Governance Agency (JaKeGA), ITD
+						
+					
+                        
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Footer End -->
+    <!-- Footer End -->
 
 
     <!-- Back to Top -->

@@ -74,7 +74,7 @@
           <li><a href="mission_cms.php" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Mission</span></a></li>
           <li><a href="objectives_cms.php" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Objectives</span></a></li>
           <li><a href="tenders_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Tenders</span></a></li>
-          <li><a href="product_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Products</span></a></li>
+          <li><a href="product_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Product</span></a></li>
           <li><a href="cover_image_cms.php" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Cover Images</span></a></li>
           <li><a href="committee_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Committee Of JKHPMC</span></a></li>
         </ul>
@@ -87,88 +87,7 @@
 </header>
 
 <!--Navbar code end-->
-   <!-- logout code -->
 
-
-<?php
-if(isset($message))
-{
-   foreach($message as $message){
-      echo '<span class="message">'.$message.'</span>';
-      
-
-   }
-
-}
-
-?>
-
- 
-<div class="container">
-
-   <div class="admin-product-form-container">
-
-      <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
-         <h3>Change About us</h3>
-         <textarea placeholder="enter content" name="content" class="box"></textarea>
-        
-         <input type="submit" class="btn" name="add_content" value="Add Content">
-         
-      </form>
-
-   </div>
-<?php
-$sql='SELECT * FROM about_us';
-$select=mysqli_query($db,$sql);
-?>
-  
-
-   
-   
-   
-   <div class="product-display">
-      <table class="product-display-table">
-         <thead>
-         <tr>
-            <th>Content</th>
-            <th>Time</th>
-        
-            <th>action</th>
-         </tr>
-         </thead>
-         <?php
-            while($post=mysqli_fetch_assoc($select))
-            {
-           ?>
-            <tr>
-            <td><p style="overflow:hidden;-webkit-line-clamp:1;display:-webkit-box;-webkit-box-orient:vertical;"><?=$post['content']?></p></td>
-            <td></td>
-        
-            <td>
-               <a href="admin_update.php?edit=<?php echo $post['about_us_id'];?>" class="btn"><i class="fas fa-edit"></i>edit</a>
-               <a href="admin_page.php?delete=<?php echo $post['about_us_id'];?>" class="btn"><i class="fas fa-trash"></i>delete</a>
-
-            </td>
-         </tr>
-                <?php
-
-            }
-            
-         ?>
-             
-         </tr>
-      
-      </table>
-   </div>
-
-</div>
-<script>
-  if ( window.history.replaceState ) {
-    window.history.replaceState( null, null, window.location.href );
-}
-</script>
-
-
-
+<h2>CONTENT MANAGEMENT SYSTEM FOR JKHPMC</h2>
 </body>
 </html>
