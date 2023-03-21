@@ -62,7 +62,7 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid position-relative p-0">
+   <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg px-5 py-3 py-lg-0" id="nav" style="background-color:white">
             <a href="index.php" class="navbar-brand p-0">
                 <h1 class="m-0"><i class="fa fa-user-tie me-2"></i></h1>
@@ -76,12 +76,12 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Organization</a>
                         <div class="dropdown-menu m-0">
                             <a href="aboutus.php" class="dropdown-item">About Us</a>
-                            <a href="./mission.php" class="dropdown-item">Mission</a>
-                            <a href="./objectives.php" class="dropdown-item">Objectives</a>
-                            <a href="./activities.php" class="dropdown-item">Activities</a>
+                            <a href="mission.php" class="dropdown-item">Mission</a>
+                            <a href="objectives.php" class="dropdown-item">Objectives</a>
+                            <a href="activities.php" class="dropdown-item">Activities</a>
                             <a href="directors.php" class="dropdown-item">Board of Directors</a>
-                            <a href="./committee.php" class="dropdown-item">Committee JKHMPC</a>
-                            <a href="./contact.php" class="dropdown-item">Telephone Directory</a>
+                            <a href="committee.php" class="dropdown-item">Committee JKHMPC</a>
+                            <a href="telephone" class="dropdown-item">Telephone Directory</a>
                             
 
                         </div>
@@ -117,12 +117,25 @@
                
             </div>
         </nav>
+        <div class="container-fluid  py-5 bg-header" style="margin-bottom: 90px;">
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-4 text-white animated zoomIn">Activities</h1>
+                    <a href="" class="h5 text-white">Organization</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="" class="h5 text-white">Activities</a>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
     <!-- Navbar End -->
 
 
     
 
-    <!-- About Start -->
+    <!-- Activities Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
@@ -150,7 +163,7 @@
             </div>
         </div>
     </div>
-    <!-- About End -->
+    <!-- Activities End -->
 
 
    
@@ -190,16 +203,16 @@
                                 <h3 class="text-light mb-0">Navigations</h3>
                             </div>
                             <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " 
+                                <a class="text-light mb-2" href="index.php"><i class="bi bi-arrow-right " 
                                     style="color:brown">
                                 </i>Home</a>
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " style="color:brown">
+                                <a class="text-light mb-2" href="aboutus.php"><i class="bi bi-arrow-right " style="color:brown">
                                 </i>About</a>
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right "style="color:brown">
+                                <a class="text-light mb-2" href="mission.php"><i class="bi bi-arrow-right "style="color:brown">
                                 </i>Mission</a>
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right "style="color:brown">
+                                <a class="text-light mb-2" href="objectives.php"><i class="bi bi-arrow-right "style="color:brown">
                                 </i>Objectives</a>
-                                <a class="text-light" href="#"><i class="bi bi-arrow-right "style="color:brown">
+                                <a class="text-light" href="activities.php"><i class="bi bi-arrow-right "style="color:brown">
                                 </i>Activities</a>
                             </div>
                         </div>
@@ -209,14 +222,13 @@
                                 <h3 class="text-light mb-0">Notifications</h3>
                             </div>
                             <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " style="color:brown">
+                                <a class="text-light mb-2" href="tenders.php"><i class="bi bi-arrow-right " style="color:brown">
                                 </i>Tenders</a>
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " style="color:brown">
+                                <a class="text-light mb-2" href="public.php"><i class="bi bi-arrow-right " style="color:brown">
                                 </i>Public Notices</a>
                                
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " style="color:brown">
+                                <a class="text-light mb-2" href="expp.php"><i class="bi bi-arrow-right " style="color:brown">
                                 </i>Expression of Interest</a>
-                               
                             </div>
                         </div>
                         

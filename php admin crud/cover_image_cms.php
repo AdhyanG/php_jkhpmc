@@ -25,39 +25,66 @@ if(isset($_REQUEST["submit"]))
 <!DOCTYPE html>
 <html>
  <head>
-  <title>How to Make Dynamic Bootstrap Carousel with PHP</title>
+  
+  <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cover Iamge</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
 <!-- custom css file link  -->
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/navbar.css">
 
-<style>
-   #last:hover{
-      background-color:palevioletred;
-   }
-   
-</style>
+
+
+
  </head>
  <body>
-  <br />
- 
-  <!-- <div class="container">
-  <div class="admin-product-form-container">
+  
+  <!--navbar start-->
+  <header id="header">
+  
+    <div class="d-flex flex-column">
 
-  <form method="post" enctype="multipart/form-data">
+      <div class="profile">
+        <img src="images/emblem.png" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Admin</a></h1>
+        
+      </div>
 
-Slider Image Upload: <input type="file" name="file"><br><br>
-<input  type="submit" name="submit" value="Upload Image">
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+        <li><a href="home.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Home</span></a></li>
+          <li><a href="about_us_cms.php" class="nav-link scrollto active"><i class="bx bx-user"></i> <span>About us</span></a></li>
+          <li><a href="mission_cms.php" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Mission</span></a></li>
+          <li><a href="objectives_cms.php" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Objectives</span></a></li>
+          <li><a href="tenders_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Tenders</span></a></li>
+          <li><a href="product_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Products</span></a></li>
+          <li><a href="cover_image_cms.php" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Cover Images</span></a></li>
+          <li><a href="committee_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Committee Of JKHPMC</span></a></li>
+        </ul>
+      </nav>
+    </div>
+    <a href="logout.php" target="_self">
+      <i class="fa fa-sign-out animated"></i></a>
 
+</header>
 
-</form>
-
-  </div>
-  </div> -->
-
+<!--navbar end-->
+  
 
   <div class="container">
 

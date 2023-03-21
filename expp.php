@@ -88,12 +88,12 @@ include './php admin crud/upload.php';
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Organization</a>
                         <div class="dropdown-menu m-0">
                             <a href="aboutus.php" class="dropdown-item">About Us</a>
-                            <a href="./mission.php" class="dropdown-item">Mission</a>
-                            <a href="./objectives.php" class="dropdown-item">Objectives</a>
-                            <a href="./activities.php" class="dropdown-item">Activities</a>
+                            <a href="mission.php" class="dropdown-item">Mission</a>
+                            <a href="objectives.php" class="dropdown-item">Objectives</a>
+                            <a href="activities.php" class="dropdown-item">Activities</a>
                             <a href="directors.php" class="dropdown-item">Board of Directors</a>
-                            <a href="./committee.php" class="dropdown-item">Committee JKHMPC</a>
-                            <a href="./contact.php" class="dropdown-item">Telephone Directory</a>
+                            <a href="committee.php" class="dropdown-item">Committee JKHMPC</a>
+                            <a href="telephone.php" class="dropdown-item">Telephone Directory</a>
                             
 
                         </div>
@@ -233,16 +233,16 @@ include './php admin crud/upload.php';
                                 <h3 class="text-light mb-0">Navigations</h3>
                             </div>
                             <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right " 
+                                <a class="text-light mb-2" href="index.php"><i class="bi bi-arrow-right " 
                                     style="color:brown">
                                 </i>Home</a>
-                                <a class="text-light mb-2" href="aboutus.html"><i class="bi bi-arrow-right " style="color:brown">
+                                <a class="text-light mb-2" href="aboutus.php"><i class="bi bi-arrow-right " style="color:brown">
                                 </i>About</a>
-                                <a class="text-light mb-2" href="mission.html"><i class="bi bi-arrow-right "style="color:brown">
+                                <a class="text-light mb-2" href="mission.php"><i class="bi bi-arrow-right "style="color:brown">
                                 </i>Mission</a>
-                                <a class="text-light mb-2" href="objectives.html"><i class="bi bi-arrow-right "style="color:brown">
+                                <a class="text-light mb-2" href="objectives.php"><i class="bi bi-arrow-right "style="color:brown">
                                 </i>Objectives</a>
-                                <a class="text-light" href="activities.html"><i class="bi bi-arrow-right "style="color:brown">
+                                <a class="text-light" href="activities.php"><i class="bi bi-arrow-right "style="color:brown">
                                 </i>Activities</a>
                             </div>
                         </div>
@@ -252,12 +252,12 @@ include './php admin crud/upload.php';
                                 <h3 class="text-light mb-0">Notifications</h3>
                             </div>
                             <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="tenders.html"><i class="bi bi-arrow-right " style="color:brown">
+                                <a class="text-light mb-2" href="tenders.php"><i class="bi bi-arrow-right " style="color:brown">
                                 </i>Tenders</a>
-                                <a class="text-light mb-2" href="public.html"><i class="bi bi-arrow-right " style="color:brown">
+                                <a class="text-light mb-2" href="public.php"><i class="bi bi-arrow-right " style="color:brown">
                                 </i>Public Notices</a>
                                
-                                <a class="text-light mb-2" href="expp.html"><i class="bi bi-arrow-right " style="color:brown">
+                                <a class="text-light mb-2" href="expp.php"><i class="bi bi-arrow-right " style="color:brown">
                                 </i>Expression of Interest</a>
                             </div>
                         </div>
