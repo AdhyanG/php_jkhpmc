@@ -1,8 +1,8 @@
 <?php
 require('../database.php');
-$_SESSION=[];
+session_start();
 session_unset();
 session_destroy();
-header('location:login.php');
+header('location:home.php');
 
 ?>

@@ -32,6 +32,7 @@
 
     <!--commitee css-->
     <link href="css/telephone.css" rel="stylesheet">
+    <link href="css/committee.css" rel="stylesheet">
 </head>
 
 <body>

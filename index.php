@@ -96,7 +96,7 @@ $rowcount=mysqli_num_rows($runQuery);
                             <a href="./activities.php" class="dropdown-item">Activities</a>
                             <a href="directors.php" class="dropdown-item">Board of Directors</a>
                             <a href="./committee.php" class="dropdown-item">Committee JKHMPC</a>
-                            <a href="./contact.php" class="dropdown-item">Telephone Directory</a>
+                            <a href="./telephone.php" class="dropdown-item">Telephone Directory</a>
                             
 
                         </div>
