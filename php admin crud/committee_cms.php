@@ -111,7 +111,7 @@ if(isset($message))
          <input type="text" placeholder="enter designation" name="designation" class="box"></input>
         
          <input type="submit" class="btn" name="add_content" value="Add Content">
-         
+          
       </form>
 
    </div>
@@ -129,7 +129,7 @@ $select=mysqli_query($db,$sql);
          <thead>
          <tr>
             <th>Sno</th>
-            <th>Name</th>
+            <th>Name</th> 
             <th>Designation</th>
             <th>Action</th>
          </tr>
