@@ -139,10 +139,7 @@
   overflow: hidden
   }
   
-  a:hover {
-  width: 130px;
-  }
-  
+
   a:hover .logout{
   opacity: .9;
   }

@@ -18,15 +18,20 @@ $files=mysqli_fetch_all($result,MYSQLI_ASSOC);
    $notification_pdf_temp_name=$_FILES['file']['tmp_name'];
    $destination="uploads/".$notification_pdf;
    $extension=pathinfo($notification_pdf,PATHINFO_EXTENSION);
+
+
 if(move_uploaded_file($notification_pdf_temp_name,$destination))
 {
+  
+
    if(empty($dated)||empty($notification_title)||empty( $notification_pdf)){
+
       $message[] = 'please fill out all';
   }else{
      $insert = "INSERT INTO `tenders` (`dated`,`notification_title`,`pdf_file`) VALUES ('$dated','$notification_title','$notification_pdf')";
       $upload = mysqli_query($db,$insert);
      if($upload){
-        move_uploaded_file($product_image_tmp_name, $product_image_folder);
+        move_uploaded_file($notification_pdf_temp_name, $destination);
         $message[] = 'new content added successfully';
      }else{
         $message[] = 'could not add the content';
@@ -38,9 +43,10 @@ else{
    echo("try again");
 }
 
+
   
   
-   
+header('location:tenders_cms.php');
    
    
  

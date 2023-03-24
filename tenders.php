@@ -15,7 +15,7 @@ include './php admin crud/tenders_upload.php';
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">  
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -33,13 +33,15 @@ include './php admin crud/tenders_upload.php';
     <link href="lib/animate/animate.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
+   
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
     <link href="css/committee.css" rel="stylesheet">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">  
+    
+    
 </head>
 
 <body>
@@ -313,6 +315,9 @@ include './php admin crud/tenders_upload.php';
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+
+    du
     <script>
 $(document).ready(function () {
     $('#myTable').DataTable();
