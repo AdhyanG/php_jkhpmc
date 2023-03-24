@@ -42,12 +42,7 @@ require './php admin crud/public_upload.php';
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner"></div>
-    </div>
-    <!-- Spinner End -->
-
+    
 
     <!-- Topbar Start -->
     <div class="container-fluid  px-5 d-none d-lg-block" style="background-color: #2a660e;">
@@ -167,13 +162,6 @@ while($post=mysqli_fetch_assoc($sqlQuery))
 
 {
 ?>
-
-
-         
-
-
-
-
     <tr class="">
                 <td class=""><?=$post['dated']?></td>
                 <td class=""><?=$post['notification_title']?></td>

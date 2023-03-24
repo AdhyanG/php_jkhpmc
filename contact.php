@@ -237,7 +237,7 @@
 
 
             <div class="row g-5">
-                <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
+                <!-- <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
                     <form>
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -257,9 +257,11 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                </div> -->
                 <div class="col-lg-6 wow slideInUp" data-wow-delay="0.6s">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6610.005637479827!2d74.819778!3d34.069442!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e18f991ecfb81b%3A0x44c33eb641157eec!2sDirectorate%20Of%20Horticulture!5e0!3m2!1sen!2sin!4v1678550558063!5m2!1sen!2sin" width="600" height="450" 
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6610.005637479827!2d74.819778!3
+                        d34.069442!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e18f991ecfb81b%3A0x44c33eb641157eec!2sDirecto
+                        rate%20Of%20Horticulture!5e0!3m2!1sen!2sin!4v1678550558063!5m2!1sen!2sin" width="1100" height="450" 
                     style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
