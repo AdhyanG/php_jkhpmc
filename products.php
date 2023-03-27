@@ -35,6 +35,8 @@ require('./database.php');
     <link href="css/style.css" rel="stylesheet">
     <!-- Products Stylesheet -->
     <link href="css/product.css" rel="stylesheet">
+    <!-- External Stylesheet -->
+    <link href="css/logotext.css" rel="stylesheet">
 </head>
  <!-- Spinner Start -->
  <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -68,9 +70,15 @@ require('./database.php');
  <!-- Navbar Start -->
  <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg px-5 py-3 py-lg-0" id="nav" style="background-color:white">
-            <a href="index.php" class="navbar-brand p-0">
-                <h1 class="m-0"><i class="fa fa-user-tie me-2"></i></h1>
-            </a>
+        <a href="index.php" class="navbar-brand p-0">
+            <h1 class="logo-container">
+                <img src="img/emblem-dark.png" alt="Logo" class="logo-img">
+                <span class="logo-text">J&amp;K Hoticultural Produce Marketing &amp; Processing Corporation Ltd.</span>
+            </h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="true">
+            <span class="fa fa-bars"></span>
+        </button>
             
             
             <div class="collapse navbar-collapse" id="navbarCollapse">
