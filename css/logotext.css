@@ -1,0 +1,52 @@
+/*** logo and text ***/
+.logo-container {
+    display: flex;
+    align-items: center;
+    font-size: 13.2px;
+    text-align: left;
+    color: #34AD54;
+    font-weight: bold;
+    line-height: 500%;
+  }
+  
+  .logo-img {
+    max-width: 100%;
+    height: auto;
+  }
+  .navbar-toggler {
+    margin-left: auto;
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  
+  @media (max-width: 991px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+      padding: 10px 0;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+    }
+  
+    .navbar-toggler {
+      margin-right: 0 ;
+    }
+  
+    .navbar-collapse {
+      margin-top: 10px;
+    }
+  }
+  .logo-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .logo-text {
+      white-space: normal;
+      line-height: 1.2;
+    }
+  }
+  
