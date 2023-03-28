@@ -82,6 +82,8 @@ session_start();
           <li><a href="objectives_cms.php" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Objectives</span></a></li>
           <li><a href="tenders_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Tenders</span></a></li>
           <li><a href="product_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Products</span></a></li>
+          <li><a href="public_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Public Notices</span></a></li>
+          <li><a href="expp_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Expression of Interest</span></a></li>
           <li><a href="cover_image_cms.php" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Cover Images</span></a></li>
           <li><a href="committee_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Committee Of JKHPMC</span></a></li>
         </ul>
@@ -119,7 +121,7 @@ if(isset($message))
          <input type="text" placeholder="enter designation" name="designation" class="box"></input>
         
          <input type="submit" class="btn" name="add_content" value="Add Content">
-         
+          
       </form>
 
    </div>
@@ -138,7 +140,7 @@ $select=mysqli_query($db,$sql);
          <thead>
          <tr>
             <th>Sno</th>
-            <th>Name</th>
+            <th>Name</th> 
             <th>Designation</th>
             <th>Action</th>
          </tr>

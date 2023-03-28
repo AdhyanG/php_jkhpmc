@@ -26,7 +26,8 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+<!-- External Stylesheet -->
+<link href="css/logotext.css" rel="stylesheet">
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -65,9 +66,15 @@
     <!-- Navbar Start -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg px-5 py-3 py-lg-0" id="nav" style="background-color:white">
-            <a href="index.php" class="navbar-brand p-0">
-                <h1 class="m-0"><i class="fa fa-user-tie me-2"></i></h1>
-            </a>
+        <a href="index.php" class="navbar-brand p-0">
+            <h1 class="logo-container">
+                <img src="img/emblem-dark.png" alt="Logo" class="logo-img">
+                <span class="logo-text">J&amp;K Hoticultural Produce Marketing &amp; Processing Corporation Ltd.</span>
+            </h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="true">
+            <span class="fa fa-bars"></span>
+        </button>
             
             
             <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -237,7 +244,7 @@
 
 
             <div class="row g-5">
-                <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
+                <!-- <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
                     <form>
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -257,9 +264,11 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                </div> -->
                 <div class="col-lg-6 wow slideInUp" data-wow-delay="0.6s">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6610.005637479827!2d74.819778!3d34.069442!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e18f991ecfb81b%3A0x44c33eb641157eec!2sDirectorate%20Of%20Horticulture!5e0!3m2!1sen!2sin!4v1678550558063!5m2!1sen!2sin" width="600" height="450" 
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6610.005637479827!2d74.819778!3
+                        d34.069442!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e18f991ecfb81b%3A0x44c33eb641157eec!2sDirecto
+                        rate%20Of%20Horticulture!5e0!3m2!1sen!2sin!4v1678550558063!5m2!1sen!2sin" width="1100" height="450" 
                     style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>

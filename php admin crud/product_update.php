@@ -133,7 +133,8 @@ if(isset($message)){
 
    <?php
 
-   $select = mysqli_query($db, "SELECT * FROM products");
+   <?php }
+   ;
    
    ?>
    <div class="product-display">
