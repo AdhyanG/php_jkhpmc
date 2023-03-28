@@ -8,15 +8,22 @@ require('../database.php');
 
 if(isset($_REQUEST["submit"]))
 {
+  $image_name=$_POST['image_name'];
 	$file=$_FILES['file']['name'];
 	$tmp_name=$_FILES['file']['tmp_name'];
    $path="images/".$file;
    move_uploaded_file($tmp_name,$path);
 
-   mysqli_query($db,"INSERT INTO slider(image)VALUES('$file')");
+   mysqli_query($db,"INSERT INTO slider(image,image_name)VALUES('$file','$image_name')");
   
    
 
+}
+if(isset($_GET['delete']))
+{
+  $id=$_GET['delete'];
+  mysqli_query($db,"DELETE FROM `slider` WHERE id=$id");
+  header('location:cover_images_cms.php');
 }
 
 
@@ -94,7 +101,9 @@ if(isset($_REQUEST["submit"]))
 
       <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
          <h3>Select Cover Images</h3>
-        
+        <label for="">Image Name</label>
+        <input type="text" class="box" name="image_name">
+        <label for="">Upload the Image</label>
          <input type="file" accept="image/png, image/jpeg, image/jpg" name="file" class="box">
          
          <input id="last" type="submit" class="btn" name="submit" value="Upload Image"
@@ -102,8 +111,53 @@ if(isset($_REQUEST["submit"]))
       </form>
 
    </div>
-  </div>
+  
+<?php
+$sno=1;
+$sql=mysqli_query($db,"SELECT * FROM slider");
 
+
+?>
+
+
+
+  <div class="product-display">
+      <table class="product-display-table">
+         <thead>
+         <tr>
+            <th>Sno</th>
+            <th>Image Name</th> 
+            <th>Cover Image</th>
+            <th>Action</th>
+         </tr>
+         </thead>
+         <?php
+            while($post=mysqli_fetch_assoc($sql))
+            {
+           ?>
+            <tr>
+            <td><?=$sno++ ?></td>
+            <td><?=$post['image_name']?></td>
+            <td><img src="images/<?php echo $post['image'];?>" height="100" alt="" srcset=""></td>
+        
+            <td>
+        
+               <a href="cover_image_cms.php?delete=<?php echo $post['id'];?>" class="btn"><i class="fas fa-trash"></i>delete</a>
+
+            </td>
+         </tr>
+                <?php
+
+            }
+            
+         ?>
+             
+         </tr>
+      
+      </table>
+   </div>
+
+</div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
