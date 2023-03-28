@@ -96,6 +96,7 @@ if(isset($_REQUEST["submit"]))
          <h3>Select Cover Images</h3>
         
          <input type="file" accept="image/png, image/jpeg, image/jpg" name="file" class="box">
+         
          <input id="last" type="submit" class="btn" name="submit" value="Upload Image"
          >
       </form>

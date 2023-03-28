@@ -118,7 +118,7 @@ if(isset($message)){
         <label for="">Product Name</label>
         <input type="text" placeholder="enter product name" name="product_name" class="box" value="<?=$post['product_name'];?>">
          <label for="">Product Description</label>
-         <textarea type="text" placeholder="enter description" name="product_about" class="box" ><b><?php echo $post['product_about'] ?></b></textarea>
+         <textarea type="text" placeholder="enter description" name="product_about" class="box" ><?php echo $post['product_about'] ?></textarea>
          <label for="">Product Image
          <input type="file" accept="image/png, image/jpeg, image/jpg" name="product_image" class="box" >
          <b><?=$post['product_image'];?></b>
@@ -133,9 +133,7 @@ if(isset($message)){
 
    <?php
 
-   <?php }
-   ;
-   
+ 
    ?>
    <div class="product-display">
       <table class="product-display-table">
@@ -147,7 +145,9 @@ if(isset($message)){
             <th>action</th>
          </tr>
          </thead>
-         <?php while($row = mysqli_fetch_assoc($select)){ ?>
+         <?php 
+         $select=mysqli_query($db,"SELECT * FROM products");
+         while($row = mysqli_fetch_assoc($select)){ ?>
          <tr>
             <td><img src="uploaded_img/<?php echo $row['product_image']; ?>" height="100" alt=""></td>
             <td><?php echo $row['product_name']; ?></td>
