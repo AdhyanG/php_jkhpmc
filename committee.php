@@ -160,15 +160,21 @@ include('./database.php');
             <th class="">Designation</th>
         </thead>
         <?php
+        $sno=0;
         $sql='SELECT * FROM committe';
+    
+        
+       
         $runCq=mysqli_query($db,$sql);
         while($post=mysqli_fetch_assoc($runCq))
         {
+            $sno++;
             ?>
         
         <tbody class="">
             <tr class="">
-                <td class=""><?=$post['sno']?></td>
+               
+                <td class=""><?=$sno;?></td>
                 <td class=""><?=$post['name']?></td>
                 <td class=""><?=$post['designation']?></td>
             </tr>

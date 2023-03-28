@@ -1,35 +1,39 @@
 <?php
 
 @include '../database.php';
+session_start();
+if(isset($_POST['add_product'])){
 
-$id = $_GET['edit'];
-if(isset($_POST['update_product'])){
+   $product_name = $_POST['product_name'];
+   $product_about =mysqli_escape_string($db, $_POST['product_about']);
+   
+   $product_image = $_FILES['product_image']['name'];
+   $product_image_tmp_name = $_FILES['product_image']['tmp_name'];
+   $product_image_folder = 'uploaded_img/'.$product_image;
 
-  $product_name = $_POST['product_name'];
-  $product_content = mysqli_escape_string($db, $_POST['product_content']);
-  $product_image = $_FILES['product_image']['name'];
-  $product_image_tmp_name = $_FILES['product_image']['tmp_name'];
-  $product_image_folder = 'uploaded_img/'.$product_image;
+   if(empty($product_name) || empty($product_about) || empty($product_image)){
+      $message[] = 'please fill out all';
+   }else{
+      $insert = "INSERT INTO products(product_name, product_about, product_image) VALUES('$product_name', '$product_about', '$product_image')";
+      $upload = mysqli_query($db,$insert);
+      if($upload){
+         move_uploaded_file($product_image_tmp_name, $product_image_folder);
+         $message[] = 'new product added successfully';
+      }else{
+         $message[] = 'could not add the product';
+      }
+   }
 
-  if(empty($product_name) || empty($product_content) || empty($product_image)){
-     $message[] = 'please fill out all!';    
-  }else{
-
-     $update_data = "UPDATE products SET product_name='$product_name', product_about='$product_content', product_image='$product_image'  WHERE id = '$id'";
-     $upload = mysqli_query($db, $update_data);
-
-     if($upload){
-        move_uploaded_file($product_image_tmp_name, $product_image_folder);
-        header('location:product_update.php');
-     }else{
-        $$message[] = 'please fill out all!'; 
-     }
-
-  }
 };
 
+if(isset($_GET['delete'])){
+   $id = $_GET['delete'];
+   mysqli_query($db, "DELETE FROM products WHERE id = $id");
+   header('location:product_cms.php');
+};
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,52 +41,133 @@ if(isset($_POST['update_product'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Product cms</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/navbar.css">
+
 </head>
 <body>
 
+
+<!--Navbar code start-->
+
+<header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="images/emblem.png" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Admin</a></h1>
+        
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+        <li><a href="home.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Home</span></a></li>
+          <li><a href="about_us_cms.php" class="nav-link scrollto active"><i class="bx bx-user"></i> <span>About us</span></a></li>
+          <li><a href="mission_cms.php" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Mission</span></a></li>
+          <li><a href="objectives_cms.php" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Objectives</span></a></li>
+          <li><a href="tenders_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Tenders</span></a></li>
+          <li><a href="product_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Products</span></a></li>
+          <li><a href="cover_image_cms.php" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Cover Images</span></a></li>
+          <li><a href="committee_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Committee Of JKHPMC</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+    <a href="logout.php" target="_self">
+  <i class="fa fa-sign-out animated"></i>
+</a>
+
+</header>
+
+<!--Navbar code end-->
+
 <?php
-   if(isset($message)){
-      foreach($message as $message){
-         echo '<span class="message">'.$message.'</span>';
-      }
+
+if(isset($message)){
+   foreach($message as $message){
+      echo '<span class="message">'.$message.'</span>';
    }
+}
+
 ?>
+   
 
 <div class="container">
 
+   <div class="admin-product-form-container">
+ 
 
-<div class="admin-product-form-container centered">
+
+      <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
+         <h3>Update the product</h3>
+
+      <?php
+      $id=$_GET['edit'];
+      $sql="SELECT * FROM products WHERE id=$id LIMIT 1";
+      $result=mysqli_query($db,$sql);
+      $post=mysqli_fetch_assoc($result);
+      ?>
+
+        <label for="">Product Name</label>
+        <input type="text" placeholder="enter product name" name="product_name" class="box" value="<?=$post['product_name'];?>">
+         <label for="">Product Description</label>
+         <textarea type="text" placeholder="enter description" name="product_about" class="box" ><b><?php echo $post['product_about'] ?></b></textarea>
+         <label for="">Product Image
+         <input type="file" accept="image/png, image/jpeg, image/jpg" name="product_image" class="box" >
+         <b><?=$post['product_image'];?></b>
+         </label>
+         
+         <input type="submit" class="btn" name="update" value="Update!">
+         <a href="product_cms.php" class="btn">Go Back!</a>
+         
+      </form>
+
+   </div>
 
    <?php
-      
-      $select = mysqli_query($db, "SELECT * FROM products WHERE id = '$id'");
-      while($row = mysqli_fetch_assoc($select)){
 
-   ?>
-   
-   <form action="" method="post" enctype="multipart/form-data">
-      <h3 class="title">update the product</h3>
-      <input type="text" class="box" name="product_name" value="<?php echo $row['product_name']; ?>" placeholder="enter the product name"></input>
-      <textarea type="text" placeholder="enter description" name="product_content" value="<?php echo $row['product_about']; ?>" class="box"></textarea>
-      <input type="file" accept="image/png, image/jpeg, image/jpg" name="product_image" value="<?php echo $row['product_image']; ?>" class="box">
-     
-      <input type="submit" value="update product" name="update_product" class="btn">
-      <a href="product_cms.php" class="btn">go back!</a>
-   </form>
-   
-
-
-   <?php }
-   ;
+   $select = mysqli_query($db, "SELECT * FROM products");
    
    ?>
-
-   
+   <div class="product-display">
+      <table class="product-display-table">
+         <thead>
+         <tr>
+            <th>product image</th>
+            <th>product name</th>
+            <th>product content</th>
+            <th>action</th>
+         </tr>
+         </thead>
+         <?php while($row = mysqli_fetch_assoc($select)){ ?>
+         <tr>
+            <td><img src="uploaded_img/<?php echo $row['product_image']; ?>" height="100" alt=""></td>
+            <td><?php echo $row['product_name']; ?></td>
+            <td><p style="overflow:hidden;-webkit-line-clamp:1;display:-webkit-box;-webkit-box-orient:vertical;"><?php echo $row['product_about']; ?></p></td>
+            <td>
+               <a href="product_update.php?edit=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-edit"></i> edit </a>
+               <a href="product_cms.php?delete=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-trash"></i> delete </a>
+            </td>
+         </tr>
+      <?php } ?>
+      </table>
+   </div>
 
 </div>
 
-</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>

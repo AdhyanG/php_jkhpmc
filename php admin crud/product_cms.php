@@ -5,16 +5,16 @@ session_start();
 if(isset($_POST['add_product'])){
 
    $product_name = $_POST['product_name'];
-   $product_content =mysqli_escape_string($db, $_POST['product_content']);
+   $product_about =mysqli_escape_string($db, $_POST['product_about']);
    
    $product_image = $_FILES['product_image']['name'];
    $product_image_tmp_name = $_FILES['product_image']['tmp_name'];
    $product_image_folder = 'uploaded_img/'.$product_image;
 
-   if(empty($product_name) || empty($product_content) || empty($product_image)){
+   if(empty($product_name) || empty($product_about) || empty($product_image)){
       $message[] = 'please fill out all';
    }else{
-      $insert = "INSERT INTO products(product_name, product_about, product_image) VALUES('$product_name', '$product_content', '$product_image')";
+      $insert = "INSERT INTO products(product_name, product_about, product_image) VALUES('$product_name', '$product_about', '$product_image')";
       $upload = mysqli_query($db,$insert);
       if($upload){
          move_uploaded_file($product_image_tmp_name, $product_image_folder);
@@ -106,7 +106,7 @@ if(isset($message)){
       <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
          <h3>add a new product</h3>
          <input type="text" placeholder="enter product name" name="product_name" class="box">
-         <textarea type="text" placeholder="enter description" name="product_content" class="box"></textarea>
+         <textarea type="text" placeholder="enter description" name="product_about" class="box"></textarea>
          <input type="file" accept="image/png, image/jpeg, image/jpg" name="product_image" class="box">
          <input type="submit" class="btn" name="add_product" value="add product">
       </form>

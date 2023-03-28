@@ -2,11 +2,11 @@
 
 @include('../database.php');
 session_start();
-// if(!isset($_SESSION['loggedin'])){
-//   echo("<script>alert('Login to access the view page.');
-//   window.location.href='home.php';</script>
-//   ");
-// }
+if(!isset($_SESSION['loggedin'])){
+  echo("<script>alert('Login to access the view page.');
+  window.location.href='home.php';</script>
+  ");
+}
 
 
  ?>
