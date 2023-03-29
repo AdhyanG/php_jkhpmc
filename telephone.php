@@ -29,11 +29,11 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <link href="css/resp.css" rel="stylesheet">
     <!-- External Stylesheet -->
     <link href="css/logotext.css" rel="stylesheet">
-    <!--commitee css-->
-    <link href="css/telephone.css" rel="stylesheet">
-    <link href="css/committee.css" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -67,14 +67,14 @@
 
 
     <!-- Navbar Start -->
+    <div class="logo-container">
+                <img src="img/emblem-dark.png" alt="Logo" class="logo-img">
+                <h4 class="logo-text">J&K HOTICULTURAL PRODUCE MARKETING & PROCESSING CORPORATION LTD.</h>
+    </div>
+    
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg px-5 py-3 py-lg-0" id="nav" style="background-color:white">
-        <a href="index.php" class="navbar-brand p-0">
-            <h1 class="logo-container">
-                <img src="img/emblem-dark.png" alt="Logo" class="logo-img">
-                <span class="logo-text">J&amp;K Hoticultural Produce Marketing &amp; Processing Corporation Ltd.</span>
-            </h1>
-        </a>
+        
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="true">
             <span class="fa fa-bars"></span>
         </button>
@@ -103,7 +103,7 @@
                             <div class="dropdown-menu m-0">
                                 <a href="tenders.php" class="dropdown-item">Tenders</a>
                                 <a href="expp.php" class="dropdown-item">Expression of Interest</a>
-                                <a href="public.php" class="dropdown-item">Public Interest</a>
+                                <a href="public.php" class="dropdown-item">Public Notices</a>
                                 
                             </div>
                         </div>

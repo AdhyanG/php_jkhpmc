@@ -23,7 +23,7 @@ if(isset($_GET['delete']))
 {
   $id=$_GET['delete'];
   mysqli_query($db,"DELETE FROM `slider` WHERE id=$id");
-  header('location:cover_images_cms.php');
+  header('location:cover_image_cms.php');
 }
 
 
@@ -142,7 +142,7 @@ $sql=mysqli_query($db,"SELECT * FROM slider");
         
             <td>
         
-               <a href="cover_image_cms.php?delete=<?php echo $post['id'];?>" class="btn"><i class="fas fa-trash"></i>delete</a>
+               <a href="<?php $_SERVER['PHP_SELF'] ?>?delete=<?php echo $post['id'];?>" class="btn"><i class="fas fa-trash"></i>delete</a>
 
             </td>
          </tr>
