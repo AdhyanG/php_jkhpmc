@@ -38,9 +38,10 @@ include './php admin crud/tenders_upload.php';
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/resp.css" rel="stylesheet">
 <!-- External Stylesheet -->
 <link href="css/logotext.css" rel="stylesheet">
-    <link href="css/committee.css" rel="stylesheet">
+<link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">  
     
     
 </head>
@@ -323,8 +324,6 @@ include './php admin crud/tenders_upload.php';
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
-
-    du
     <script>
 $(document).ready(function () {
     $('#myTable').DataTable();

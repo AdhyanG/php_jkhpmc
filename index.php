@@ -92,7 +92,7 @@ $rowcount=mysqli_num_rows($runQuery);
                 <div class="navbar-nav ms-auto py-0">
                     <a href="index.php" class="nav-item nav-link active">Home</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Organization</a>
+                        <a href="# " class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Organization</a>
                         <div class="dropdown-menu m-0">
                             <a href="aboutus.php" class="dropdown-item">About Us</a>
                             <a href="./mission.php" class="dropdown-item">Mission</a>
@@ -251,29 +251,29 @@ else
  <!--Image-->
  <div class="image-row">
     <div class="image-container">
-      <img src="IMG/team-1.jpg" alt="Image 1">
-      <div class="image-text">
+      <img src="IMG/team-1.jpg" alt="Image 1" style="height:270px;width:300px;">
+      <div class="image-text"  style="width: 300px;">
         <h5>Sh. Manoj Sinha</h5>
         <p>Honourable Lieutenant Governor, Union Territory of Jammu and Kashmir</p>
       </div>
     </div>
     <div class="image-container">
-      <img src="img/team-2.jpg" alt="Image 2">
-      <div class="image-text">
+      <img src="img/team-2.jpg" alt="Image 2" style="height:270px;width:310px;">
+      <div class="image-text"  style="width: 300px;">
         <h5>Sh. Rajeev Rai Bhatnagar</h5>
         <p>Advisor to Hon'ble LG, Govt. of UT of J&K</p>
       </div>
     </div>
     <div class="image-container">
-      <img src="img/team-3.jpg" alt="Image 3">
-      <div class="image-text">
+      <img src="img/team-3.jpg" alt="Image 3" style="height:270px;width:300px;">
+      <div class="image-text" style="width: 300px;">
         <h5>Sh. Atal Dulloo (IAS)</h5>
         <p>Financial Commissioner, Agriculture Production Department</p>
       </div>
     </div>
     <div class="image-container">
-      <img src="img/t.png" alt="Image 4">
-      <div class="image-text">
+      <img src="img/t.png" alt="Image 4" style="height:270px;width:300px;">
+      <div class="image-text"  style="width: 300px;">
         <h5>Imam Din</h5>
         <p>Managing Director</p>
       </div>
@@ -290,7 +290,7 @@ else
   <div class="about-text">
     <p>JKHPMC Jammu&amp; Kashmir Horticultural Produce Marketing and Processing Corporation Ltd. popularly known as JKHPMC was established in the year 1978 as State Public Undertaking with the objective to develop, aid, assist, initiate, promote, organise fresh fruits production, marketing processing, warehousing and cold storing and processing of all types of fruits. It has developed the most modern system of marketing in the country. Most unique characteristic of this organization is that it provides all the services to the fruit growers, which are required for marketing of fruits. Since its inception, Corporation has engaged itself in establishment of pre and post-harvest activities, comprising of an integrated network of mechanised pack- houses, cold storages, trans-shipment centers and fruit processing plants, besides a net-work of sales offices in the terminal markets, railways stations and airports throughout the country.</p>
   </div>
-  <a href="aboutus.html" class="read-more">Read More</a>
+  <a href="aboutus.php" class="read-more">Read More</a>
 </div>
 
   <!--ABOUT-->
@@ -312,46 +312,37 @@ else
         <th class="">Downlaod/View</th>
       </tr>
     </thead>
+    <?php 
+    $sno=1;
+$sql="SELECT * FROM tenders ORDER BY sno ASC LIMIT 3";
+$runSql=mysqli_query($db,$sql);
+
+?>
+
     <tbody>
+      <?php
+    if(mysqli_num_rows($runSql)>0)
+    {
+    foreach($runSql as $row)
+    {
+      ?>
       <tr>
-        <td>1</td>
-        <td class="date">2023-03-25</td>
-        <td>Date extension notice in respect of E-NIT 01 of 2023, Dated 06-03-2023.</td>
-        <td><a href="#">Download</a></td>
+        <td><?=$sno++;?></td>
+
+        <td><?=$row['dated']?></td>
+        <td><?=$row['notification_title']?></td>
+        <td><a href="tenders.php">Download</a></td>
+    
+    
       </tr>
-      <tr>
-        <td>2</td>
-        <td class="date">2023-03-25</td>
-        <td>FRESH SHORT TERM NOTICE FOR AUCTION OF FRUIT CROP & GREEN GRASS.</td>
-        <td><a href="#">Download</a></td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td class="date">2023-03-23</td>
-        <td>Notice inviting e-Tenders, Tender Reference No: 03 of 2023 under “Single Cover System” from reputed-registered Principal Manufacturing Firms/Companies/Agencies, their authorized distributors &amp; dealers for the “Empanelment of Agencies (for a period of one year) for the Finalization of Annual Rate Contracts for supply of Plant Protection (PP) Chemicals, Organic Fertilizers/Manures and Vermicompost duly approved by the Agriculture Department."	
-</td>
-        <td><a href="#">Download</a></td>
-      </tr>
-      <td>4</td>
-        <td class="date">2023-03-20</td>
-        <td>Notice inviting e-Tenders, e-NIT No : 02 of 2023 under “Single Cover System” from reputed- registered Principal Manufacturing Firms/Companies/Agencies, their authorized distributors &amp; dealers for the “Empanelment of Agencies (for a period of one year) for the Finalization of Annual Rate Contracts for supply of Agricultural Machinery Equipment and other allied branded items with ISI/BIS marking issued vide No: JKHPMC/FA/23/787, Dated: 20.03.2023 .</td>
-        <td><a href="#">Download</a></td>
-      </tr>
-      <td>5</td>
-        <td class="date">2023-03-06</td>
-        <td>Notice inviting tenders for selection of agency for providing Engineering and Project management consultancy to JKHPMC, Tender Reference No ; 01 of 2023, dated 06-03-2023.</td>
-        <td><a href="#">Download</a></td>
-      </tr>
-      <td>6</td>
-        <td class="date">2023-01-19</td>
-        <td>" Retender Corrigendum w.r.t e-NIT No. 119 of 2022, Dated 07-12-2022"</td>
-        <td><a href="#">Download</a></td>
-      </tr>
-      <td>7</td>
-        <td class="date">2023-01-19</td>
-        <td> "  Retender Corrigendum w.r.t e-NIT No. 118 of 2022, Dated 07-12-2022" .</td>
-        <td><a href="#">Download</a></td>
-      </tr>
+    <?php
+    }
+    }
+    else{
+      echo"<script>No Records Found</script>";
+    }
+    
+    ?>
       
     </tbody>
   </table>
@@ -367,25 +358,36 @@ else
         <th class="">Download/View</th>
       </tr>
     </thead>
+    <?php
+    $sno_2=1;
+$select="SELECT * FROM public ORDER BY sno ASC LIMIT 3";
+$runSelect=mysqli_query($db,$select);
+
+?>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td class="date">20-01-2022<</td>
-        <td>Bid Opening cum Technical Evaluation Summary in respect of this Office EOI No : JKHPMC/MD/22/147 Dated: 20-01-2022</td>
-        <td><a href="#">Download</a></td>
+      <?php
+      if(mysqli_num_rows($runSelect)>0)
+      {
+        foreach($runSelect as $post)
+        {
+          ?>
+            <tr>
+              <td><?=$sno_2++?></td>
+              <td class="date"><?=$post['dated']?></td>
+              <td><?=$post['notification_title']?></td>
+              <td><a href="public.php">Download</a></td>
       </tr>
-      <tr>
-        <td>2</td>
-        <td class="date">2/1/2022</td>
-        <td>Corrigendum w.r.t EOI vide No. JKHPMC/MD/22/147, dated 20-01-2022</td>
-        <td><a href="#">Download</a></td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td class="date">1/20/2022</td>
-        <td>Expression of Interest (EOI) for empanelment of Manufacturers and Registered Indian Importers for supply of Tree Spray Oil (TSO)/Horticulture Mineral Oil (HMO) at JKHPMC’s Headquarter, Srinagar and its various Regional Offices in J&K, India, for a period of One (01) Year</td>
-        <td><a href="#">Download</a></td>
-      </tr>
+
+        
+
+      
+    
+      <?php
+    }
+  
+    }
+    ?>
+      
     </tbody>
   </table>
 </div>
@@ -400,25 +402,34 @@ else
         <th class="">Downlaod/View</th>
       </tr>
     </thead>
+    <?php
+    $sno_3=1;
+    $method="SELECT * FROM expp ORDER BY sno ASC LIMIT 3";
+    $runMethod=mysqli_query($db,$method);
+
+
+?>
+
     <tbody>
+    <?php
+if(mysqli_num_rows($runMethod)>0)
+{
+  foreach($runMethod as $post)
+  {
+    ?>
+    
+  
       <tr>
-        <td>1</td>
-        <td class="date">3/8/2023	</td>
-        <td>NOTICE FOR SHORT TERM QUOTATION</td>
-        <td><a href="#">Download</a></td>
+        <td><?=$sno_3++?></td>
+        <td class="date"><?=$post['dated']?></td>
+        <td><?=$post['notification_title']?></td>
+        <td><a href="./expp.php">Download</a></td>
       </tr>
-      <tr>
-        <td>2</td>
-        <td class="date">2/20/2023</td>
-        <td>''PARVAZ BROCHURE''</td>
-        <td><a href="#">Download</a></td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td class="date">12/10/2022	</td>
-        <td>Auction of Old Building structures at JKHPMC's land bank at Doabgah,Sopore,Auction notice 03 of 2022,Dated: 7-12-2022</td>
-        <td><a href="#">Download</a></td>
-      </tr>
+      <?php
+    }
+  }
+  ?>
+      
     </tbody>
   </table>
 </div>
