@@ -251,28 +251,28 @@ else
  <!--Image-->
  <div class="image-row">
     <div class="image-container">
-      <img src="IMG/team-1.jpg" alt="Image 1" style="height:270px;width:300px;">
+      <img src="IMG/team-1.jpg" alt="Image 1" style="height:200px;width:300px;">
       <div class="image-text"  style="width: 300px;">
         <h5>Sh. Manoj Sinha</h5>
         <p>Honourable Lieutenant Governor, Union Territory of Jammu and Kashmir</p>
       </div>
     </div>
     <div class="image-container">
-      <img src="img/team-2.jpg" alt="Image 2" style="height:270px;width:310px;">
+      <img src="img/team-2.jpg" alt="Image 2" style="height:200px;width:300px;">
       <div class="image-text"  style="width: 300px;">
         <h5>Sh. Rajeev Rai Bhatnagar</h5>
         <p>Advisor to Hon'ble LG, Govt. of UT of J&K</p>
       </div>
     </div>
     <div class="image-container">
-      <img src="img/team-3.jpg" alt="Image 3" style="height:270px;width:300px;">
+      <img src="img/team-3.jpg" alt="Image 3" style="height:200px;width:300px;">
       <div class="image-text" style="width: 300px;">
         <h5>Sh. Atal Dulloo (IAS)</h5>
         <p>Financial Commissioner, Agriculture Production Department</p>
       </div>
     </div>
     <div class="image-container">
-      <img src="img/t.png" alt="Image 4" style="height:270px;width:300px;">
+      <img src="img/t.png" alt="Image 4" style="height:200px;width:300px;">
       <div class="image-text"  style="width: 300px;">
         <h5>Imam Din</h5>
         <p>Managing Director</p>

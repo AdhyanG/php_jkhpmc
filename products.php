@@ -178,11 +178,10 @@ require('./database.php');
         </div>
      </div>
 </div>
-
-        
-
 </div>
     <!-- Product End -->
+    
+    
     <!-- Footer Start -->
     <div class="container-fluid " id="footer" data-wow-delay="0.1s" >
         <div class="container" style="background-color:#34AD54;">
@@ -312,6 +311,7 @@ require('./database.php');
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/product.js"></script>
 </body>
 
 </html>
