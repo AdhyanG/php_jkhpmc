@@ -372,7 +372,7 @@ $runSelect=mysqli_query($db,$select);
         {
           ?>
             <tr>
-              <td><?=$sno_2++?></td>
+              <td><b><?=$sno_2++?></b></td>
               <td class="date"><?=$post['dated']?></td>
               <td><?=$post['notification_title']?></td>
               <td><a href="public.php">Download</a></td>

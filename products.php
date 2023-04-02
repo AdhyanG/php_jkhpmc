@@ -148,7 +148,7 @@ require('./database.php');
 <div class="ui segment">
 <div class="ui segment">
  <div class="ui grid">
-<div class="five wide column">
+
 <!-- dynamic code -->
     <?php
     $sql='SELECT * FROM products';
