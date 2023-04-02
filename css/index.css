@@ -1,7 +1,7 @@
 /* imagecss */
-.image-row {
+/*.image-row {
     display: flex;
-    justify-content: space-between;
+     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
   }
@@ -39,9 +39,52 @@
   
   .image-container:hover .image-text {
     opacity: 1;
-  }
+  } */
   
  
+  .image-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 30px; 
+  }
+  
+  .image-container {
+    flex-basis: calc(25% - 10px);
+    margin-bottom: 20px;
+  }
+  
+  .image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .image-text {
+    margin-top: 10px;
+    text-align: center;
+    color: #333; /* add color to the text */
+    transition: color 0.2s ease-in-out; /* add a color transition effect */
+  }
+  
+  .image-text:hover {
+    color: #ff6347; /* change the color when hovering over the text */
+  }
+  .image-container img {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .image-container img:hover {
+    transform: scale(1.1);
+  }
+  
+
+  @media (max-width: 768px) {
+    .image-container {
+      flex-basis: calc(50% - 10px);
+    }
+  }
+  
 
 /*aboutcss*/
 
@@ -175,7 +218,7 @@
   
   /* border to the active tab content */
   .tabcontent.active {
-    border: 2px solid #0000CD;
+    border: 2px solid green 
   }
   
   /* Add equal spacing between tablinks */
@@ -239,7 +282,12 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out; /* add a transition effect to the transform property */
   }
-    
+  
+  .gallery-container img:hover {
+    transform: scale(1.2); /* zoom in effect on hover */
+  }
+ 
   
  
