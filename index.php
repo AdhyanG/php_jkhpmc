@@ -309,7 +309,7 @@ else
         <th class="">S.No</th>
         <th class="">Dated</th>
         <th class="">Title</th>
-        <th class="">Downlaod/View</th>
+        <th class="">Download/View</th>
       </tr>
     </thead>
     <?php 
@@ -327,8 +327,7 @@ $runSql=mysqli_query($db,$sql);
     {
       ?>
       <tr>
-        <td><?=$sno++;?></td>
-
+        <td><img src="img/new.gif"><?=$sno++;?></td>
         <td><?=$row['dated']?></td>
         <td><?=$row['notification_title']?></td>
         <td><a href="tenders.php">Download</a></td>
@@ -346,7 +345,11 @@ $runSql=mysqli_query($db,$sql);
       
     </tbody>
   </table>
+  <div class="center aligned">
+      <a href="tenders.php">View More</a>
+    </div>
 </div>
+
 
 <div style="overflow: auto"id="public_notices" class="tabcontent">
   <table class="ui celled selectable unstackable table">
@@ -372,34 +375,34 @@ $runSelect=mysqli_query($db,$select);
         {
           ?>
             <tr>
-              <td><?=$sno_2++?></td>
+              <td><img src="img/new.gif"><?=$sno_2++?></td>
               <td class="date"><?=$post['dated']?></td>
               <td><?=$post['notification_title']?></td>
               <td><a href="public.php">Download</a></td>
       </tr>
 
         
-
       
-    
       <?php
     }
   
     }
     ?>
-      
     </tbody>
   </table>
+  <div class="center aligned">
+      <a href="public.php">View More</a>
+    </div>
 </div>
 
 <div style="overflow: auto" id="expressions" class="tabcontent">
   <table class="ui celled selectable unstackable table">
     <thead class="">
       <tr class="center aligned">
-        <th class="">S.No</th>
+        <th class="">S.No </th>
         <th class="">Dated</th>
         <th class="">Title</th>
-        <th class="">Downlaod/View</th>
+        <th class="">Download/View</th>
       </tr>
     </thead>
     <?php
@@ -409,7 +412,6 @@ $runSelect=mysqli_query($db,$select);
 
 
 ?>
-
     <tbody>
     <?php
 if(mysqli_num_rows($runMethod)>0)
@@ -420,7 +422,7 @@ if(mysqli_num_rows($runMethod)>0)
     
   
       <tr>
-        <td><?=$sno_3++?></td>
+        <td><img src="img/new.gif"><?=$sno_3++?></td>
         <td class="date"><?=$post['dated']?></td>
         <td><?=$post['notification_title']?></td>
         <td><a href="./expp.php">Download</a></td>
@@ -432,6 +434,9 @@ if(mysqli_num_rows($runMethod)>0)
       
     </tbody>
   </table>
+  <div class="center aligned">
+      <a href="expp.php">View More</a>
+    </div>
 </div>
 
 
