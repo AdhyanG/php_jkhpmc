@@ -211,7 +211,7 @@ include './php admin crud/upload.php';
     
 
      <!-- Footer Start -->
-     <div class="container-fluid " id="footer" data-wow-delay="0.1s" >
+     <div class="container-fluid " id="footer" data-wow-delay="0.1s" style="padding-top:10px;" >
         <div class="container" style="background-color:#34AD54;">
             <div class="row gx-5" >
                 <div class="col-lg-8 col-md-6" style="color:white; ">
