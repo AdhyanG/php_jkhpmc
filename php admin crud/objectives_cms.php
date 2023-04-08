@@ -77,7 +77,6 @@ session_start();
           <li><a href="public_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Public Notices</span></a></li>
           <li><a href="expp_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Expression of Interest</span></a></li>
           <li><a href="cover_image_cms.php" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Cover Images</span></a></li>
-          <li><a href="photos_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Photos</span></a></li></li>
           <li><a href="committee_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Committee Of JKHPMC</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
