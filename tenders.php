@@ -161,8 +161,9 @@ include './php admin crud/tenders_upload.php';
          
         <h3>Tenders</h3>
 </div>
-    <table class="ui table table-bordered" id="myTable"  >
+    <table class="ui table stripe" id="myTable"  >
         <thead class="">
+            <th>Sno</th>
         <th class="">Dated</th>
             <th class="">Tenders</th>
             <th class="three wide">Action</th>
@@ -170,6 +171,7 @@ include './php admin crud/tenders_upload.php';
 
 
         <?php
+        $sno=1;
             $sql='SELECT * FROM tenders';
             $runQuery=mysqli_query($db,$sql);
             ?>
@@ -184,7 +186,7 @@ include './php admin crud/tenders_upload.php';
 
            
             <tr class="">
-               
+               <td><?=$sno++;?></td>
                 <td class=""><?=$post['dated']?></td>
                 <td class=""><?=$post['notification_title']?></td>
                     <td class="">

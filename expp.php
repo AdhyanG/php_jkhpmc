@@ -42,7 +42,7 @@ include './php admin crud/upload.php';
     <!-- External Stylesheet -->
     <link href="css/logotext.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">  
 </head>
 
 <body>
@@ -159,7 +159,7 @@ include './php admin crud/upload.php';
          
         <h3>Expression of Interest</h3>
 </div>
-    <table class="ui table table-bordered" id="myTable">
+    <table class="ui table stripe" id="myTable" style="width:100%;">
         <thead class="">
             <th class="">Sno</th>
         <th class="">Dated</th>

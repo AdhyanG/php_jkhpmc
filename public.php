@@ -157,7 +157,7 @@ require './php admin crud/public_upload.php';
          
         <h3>Public Notices</h3>
 </div>
-    <table class="ui table table-borderd" id="myTable">
+    <table class="ui table stripe" id="myTable">
         <thead class="">
             <th>Sno</th>
             <th class="three wide">Dated</th>
