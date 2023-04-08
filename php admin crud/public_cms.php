@@ -43,19 +43,20 @@ if(isset($_GET['delete']))
       </div>
 
       <nav id="navbar" class="nav-menu navbar">
-        <ul>
-        <li><a href="home.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Home</span></a></li>
-          <li><a href="about_us_cms.php" class="nav-link scrollto active"><i class="bx bx-user"></i> <span>About us</span></a></li>
-          <li><a href="mission_cms.php" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Mission</span></a></li>
-          <li><a href="objectives_cms.php" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Objectives</span></a></li>
-          <li><a href="tenders_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Tenders</span></a></li>
-          <li><a href="product_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Products</span></a></li>
-          <li><a href="public_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Public Notices</span></a></li>
-          <li><a href="expp_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Expression of Interest</span></a></li>
-          <li><a href="cover_image_cms.php" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Cover Images</span></a></li>
-          <li><a href="committee_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Committee Of JKHPMC</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
+  <ul>
+    <li><a href="home.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Home</span></a></li>
+    <li><a href="about_us_cms.php" class="nav-link scrollto "><i class="bx bx-user"></i> <span>About us</span></a></li>
+    <li><a href="mission_cms.php" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Mission</span></a></li>
+    <li><a href="objectives_cms.php" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Objectives</span></a></li>
+    <li><a href="tenders_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Tenders</span></a></li>
+    <li><a href="product_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Products</span></a></li>
+    <li><a href="public_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Public Notices</span></a></li>
+    <li><a href="expp_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Expression of Interest</span></a></li>
+    <li><a href="cover_image_cms.php" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Cover Images</span></a></li>
+    <li><a href="committee_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Committee Of JKHPMC</span></a></li>
+  </ul>
+</nav>
+<!-- .nav-menu -->
     </div>
     <a href="logout.php" target="_self">
   <i class="fa fa-sign-out animated"></i>
