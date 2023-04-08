@@ -33,6 +33,7 @@ require('./database.php');
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
 <!-- External Stylesheet -->
 <link href="css/logotext.css" rel="stylesheet">
     <!--slides css-->
@@ -150,6 +151,8 @@ require('./database.php');
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-7">
+
+                
                     <div class="section-title position-relative pb-3 mb-5">
                         
                         <h1 class="mb-0">Photos Of Products</h1>
@@ -166,27 +169,18 @@ require('./database.php');
  <div class="slider-container">
     <div class="slider">
     <?php
-    $sql='SELECT * FROM products';
+    $sql='SELECT * FROM photos';
     $runCq=mysqli_query($db,$sql);
     while($post=mysqli_fetch_assoc($runCq))
     {
         ?>
     
-       <img src="./php admin crud/uploaded_img/<?php echo $post['product_image']; ?>"  height="500" alt="Product 1">
+       <img src="./php admin crud/uploaded_img/<?php echo $post['product_image']; ?>"  height="650" alt="Product 1">
        <?php
     }
     ?>
     
-        <!-- <img src="img/productimg/appricots.jpg" alt="Product2">
-        <img src="img/productimg/apple.jpg" alt="Product 3">
-        <img src="img/productimg/gucci.jpg" alt="Product 4">
-        <img src="img/productimg/honey.png" alt="Product 5">
-        <img src="img/productimg/kashmiri_cherry.jpg" alt="Product 6">
-        <img src="img/productimg/rajma.jpg" alt="Product 7">
-        <img src="img/productimg/zeera.jpg" alt="Product 8">
-        <img src="img/productimg/rice.jpg" alt="Product 9">
-        <img src="img/productimg/saffron.png" alt="Product10">
-        <img src="img/productimg/walnut.jpg" alt="Product11"> -->
+        
     
 </div>
     <div class="slider-dots"></div>
