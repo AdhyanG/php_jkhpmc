@@ -161,7 +161,7 @@ include './php admin crud/tenders_upload.php';
          
         <h3>Tenders</h3>
 </div>
-    <table class="ui table" id="myTable">
+    <table class="ui table table-bordered" id="myTable"  >
         <thead class="">
         <th class="">Dated</th>
             <th class="">Tenders</th>

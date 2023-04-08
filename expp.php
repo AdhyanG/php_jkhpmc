@@ -159,8 +159,9 @@ include './php admin crud/upload.php';
          
         <h3>Expression of Interest</h3>
 </div>
-    <table class="ui table" id="myTable">
+    <table class="ui table table-bordered" id="myTable">
         <thead class="">
+            <th class="">Sno</th>
         <th class="">Dated</th>
             <th class="">Notification Title</th>
             <th class="three wide">Action</th>
@@ -168,6 +169,7 @@ include './php admin crud/upload.php';
 
 
         <?php
+        $sno=1;
             $sql='SELECT * FROM expp';
             $runQuery=mysqli_query($db,$sql);
             ?>
@@ -182,7 +184,7 @@ include './php admin crud/upload.php';
 
            
             <tr class="">
-               
+               <td class=""><?=$sno++;?></td>
                 <td class=""><?=$post['dated']?></td>
                 <td class=""><?=$post['notification_title']?></td>
                     <td class="">

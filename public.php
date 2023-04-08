@@ -41,6 +41,7 @@ require './php admin crud/public_upload.php';
     <link href="css/resp.css" rel="stylesheet">
     <!-- External Stylesheet -->
     <link href="css/logotext.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css"> 
 
    
 </head>
@@ -156,8 +157,9 @@ require './php admin crud/public_upload.php';
          
         <h3>Public Notices</h3>
 </div>
-    <table class="ui table">
+    <table class="ui table table-borderd" id="myTable">
         <thead class="">
+            <th>Sno</th>
             <th class="three wide">Dated</th>
             <th class="">Notification Title</th>
             <th class="three wide">Action</th>
@@ -166,6 +168,7 @@ require './php admin crud/public_upload.php';
  
         <!-- dynamic code -->
 <?php
+$sno=1;
 $sql='SELECT * FROM public';
 $sqlQuery=mysqli_query($db,$sql);
 while($post=mysqli_fetch_assoc($sqlQuery))
@@ -173,6 +176,7 @@ while($post=mysqli_fetch_assoc($sqlQuery))
 {
 ?>
     <tr class="">
+                <td class=""><?=$sno++;?></td>
                 <td class=""><?=$post['dated']?></td>
                 <td class=""><?=$post['notification_title']?></td>
                 <td class=""><button class="ui button">
@@ -304,6 +308,14 @@ while($post=mysqli_fetch_assoc($sqlQuery))
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script>
+$(document).ready(function () {
+    $('#myTable').DataTable();
+});
+    </script>
     <!-- Footer End -->
 
 
@@ -313,7 +325,7 @@ while($post=mysqli_fetch_assoc($sqlQuery))
 
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>

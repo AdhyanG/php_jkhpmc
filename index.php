@@ -327,9 +327,9 @@ $runSql=mysqli_query($db,$sql);
     {
       ?>
       <tr>
-        <td><img src="img/new.gif"><?=$sno++;?></td>
+        <td><?=$sno++;?></td>
         <td><?=$row['dated']?></td>
-        <td><?=$row['notification_title']?></td>
+        <td><?=$row['notification_title']?><img src="img/new.gif"></td>
         <td><a href="tenders.php">Download</a></td>
     
     
@@ -377,7 +377,7 @@ $runSelect=mysqli_query($db,$select);
             <tr>
               <td><?=$sno_2++?></td>
               <td class="date"><?=$post['dated']?></td>
-              <td><?=$post['notification_title']?></td>
+              <td><?=$post['notification_title']?><img src="img/new.gif"></td>
               <td><a href="public.php">Download</a></td>
       </tr>
 
@@ -422,9 +422,9 @@ if(mysqli_num_rows($runMethod)>0)
     
   
       <tr>
-        <td><img src="img/new.gif"><?=$sno_3++?></td>
+        <td><?=$sno_3++?></td>
         <td class="date"><?=$post['dated']?></td>
-        <td><?=$post['notification_title']?></td>
+        <td><?=$post['notification_title']?><img src="img/new.gif"></td>
         <td><a href="./expp.php">Download</a></td>
       </tr>
       <?php
