@@ -257,6 +257,35 @@
       padding: 10px ;
     }
   }
+  /*highlight*/
+  table.ui.celled.selectable.unstackable.table tbody tr:nth-child(even) {
+    background-color: bisque;
+    font-weight: bold;
+  }
+  
+  table.ui.celled.selectable.unstackable.table tbody tr:nth-child(odd) {
+    background-color: #fff; 
+    font-weight:bold;
+  }
+  #public_notices {
+    overflow: auto;
+  }
+  #public_notices {
+    overflow: auto;
+  }
+  #public_notices {
+    overflow: auto;
+  }
+  
+  .ui.table {
+    width: 100%;
+  }
+  
+  .center.aligned {
+    text-align: right;
+    margin-top: 10px;
+  }
+  
   
   
   
