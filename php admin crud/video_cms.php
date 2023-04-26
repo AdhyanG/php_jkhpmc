@@ -41,7 +41,7 @@ if(isset($_GET['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Photos cms</title>
+   <title>Video cms</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -80,12 +80,6 @@ if(isset($_GET['delete'])){
           <li><a href="cover_image_cms.php" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Cover Images</span></a></li>
           <li><a href="committee_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Committee Of JKHPMC</span></a></li>
         </ul>
-        <li><a href="photos_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Photos</span></a></li>
-        </ul>
-        <li><a href="video_cms.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Videos</span></a></li>
-        </ul>
-
-
       </nav><!-- .nav-menu -->
     </div>
     <a href="logout.php" target="_self">

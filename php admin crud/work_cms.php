@@ -1,65 +1,88 @@
 <?php
 
-@include('../database.php');
-session_start();
-if(!isset($_SESSION['loggedin'])){
-  echo("<script>alert('Login to access the view page.');
-  window.location.href='home.php';</script>
-  ");
+@include_once './submit.php';
+
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Work Flow ocms</title>
+
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!-- custom css file link  -->
+  <!-- <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css"> -->
+
+  <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+
+
+</head>
+
+<body>
+<div class="container">
+  <div class="ed-form">
+
+  <?php if(!empty($statusMsg)){ ?>
+    <p class="stmsg"><?php echo $statusMsg; ?></p>
+
+
+  <?php } ?>
+
+<form method="post" action="">
+    <textarea name="editor" id="editor" rows="10" cols="80">
+    This is my textarea to be replaced with HTML editor.
+    </textarea>
+    <input type="submit" name="submit" value="SUBMIT">
+</form>
+
+</div>
+<?php if(!empty($editorContent))
+{
+  ?>
+<div class="ed-cont">
+  <?php echo $editorContent;?>
+</div>
+
+<?php  
 }
 
+?>
 
- ?>
-
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Summernote with Bootstrap 4</title>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-  </head>
-
-  <style>
-   
-   body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-
-   }
+</div>
+  <script>
+  CKEDITOR.replace('editor');
+  </script>
 
 
-  </style>
-  <body>
 
-  <div class="container">
-    <div id="summernote">
-
-    </div>
-  </div>
-        
+  <!--Navbar code end-->
 
 
 
 
 
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.slim.js"
+    integrity="sha512-G1QAKkF7DrLYdKiz55LTK3Tlo8Vet2JnjQHuJh+LnU0zimJkMZ7yKZ/+lQ/0m94NC1EisSVS1b35jugu3wLdQg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous">
+  </script> -->
 
+</body>
 
-
-    <script>
-      $('#summernote').summernote({
-        placeholder: 'Type your message here',
-        tabsize: 2,
-        height: 200
-      });
-    </script>
-  </body>
 </html>
-

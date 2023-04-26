@@ -136,7 +136,7 @@ include('./database.php');
         <div class="container-fluid  py-5 bg-header" style="margin-bottom: 90px;">
             <div class="row py-5">
                 <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-4 text-white animated zoomIn">Committee JKHPMC</h1>
+                    <h1 class="display-4 text-white animated zoomIn">Board of Direactord JKHPMC</h1>
                     <a href="" class="h5 text-white">Organization</a>
                     <i class="far fa-circle text-white px-2"></i>
                     <a href="" class="h5 text-white">Committee JKHPMC</a>
@@ -161,7 +161,7 @@ include('./database.php');
     </div> -->
     <table class="ui table">
         
-       
+    <h3 style="display:flex; align-items:center;justify-content:center;">Board Of Directors JKHPMC</h3>
 
         <thead class="">
             <th class="">S.No</th>

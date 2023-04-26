@@ -272,7 +272,7 @@ else
       </div>
     </div>
     <div class="image-container">
-      <img src="img/t.png" alt="Image 4" style="height:200px;width:300px;">
+      <img src="./img/md.jpeg" alt="Image 4" style="height:200px;width:300px;">
       <div class="image-text"  style="width: 300px;">
         <h5>Imam Din</h5>
         <p>Managing Director</p>

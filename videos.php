@@ -169,7 +169,7 @@ require('./database.php');
  <div class="slider-container">
     <div class="slider">
     <?php
-    $sql='SELECT * FROM photos';
+    $sql='SELECT * FROM videos';
     $runCq=mysqli_query($db,$sql);
     while($post=mysqli_fetch_assoc($runCq))
     {
